@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NextGen Fest 2026 - Data Science Club</title>
-    <link rel="stylesheet" href="../css/components.css" />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/components.css?v=2" />
+    <link rel="stylesheet" href="../css/styles.css?v=2" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
@@ -32,9 +32,10 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+    <section class="hero ngf-hero">
       <div class="hero-content">
-        <h1>NextGen Fest 2026</h1>
+        <img src="../assets/images/NGF Logo.png" alt="NextGen Fest Logo" class="ngf-logo">
+        <h1 class="ngf-title">NextGen Fest 2026</h1>
         <p>The Ultimate Data Science Festival - March 15, 2026</p>
         <a href="../join.html" class="btn btn-primary btn-large">Register Now</a>
       </div>
@@ -45,20 +46,20 @@
       <h2 class="section-title">Event Overview</h2>
       <div class="grid-2" style="gap: 3rem; align-items: center; margin: 2rem 0;" data-aos="fade-up">
         <div>
-          <h3 style="color: #1e293b; margin-bottom: 1rem;">🎉 NextGen Fest 2026</h3>
+          <h3 style="color: var(--dark); margin-bottom: 1rem;">🎉 NextGen Fest 2026</h3>
           <p>
             NextGen Fest is our flagship annual festival celebrating data science innovation,
             creativity, and community. This year's event promises to be bigger and better than ever!
           </p>
-          <div style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid #8b5cf6;">
-            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">📅 Event Details</h4>
+          <div style="background: var(--light); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid var(--ngf-red);">
+            <h4 style="color: var(--dark); margin-bottom: 0.5rem;">📅 Event Details</h4>
             <p style="margin-bottom: 0.5rem;"><strong>Date:</strong> March 15, 2026</p>
             <p style="margin-bottom: 0.5rem;"><strong>Time:</strong> 9:00 AM - 5:00 PM</p>
             <p style="margin-bottom: 0;"><strong>Venue:</strong> NIBM Main Auditorium & Conference Halls</p>
           </div>
         </div>
         <div>
-          <div style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); padding: 2rem; border-radius: 12px; color: #fff; text-align: center;">
+          <div style="background: linear-gradient(135deg, var(--ngf-black) 0%, var(--ngf-red) 100%); padding: 2rem; border-radius: 12px; color: var(--ngf-white); text-align: center;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
             <h3 style="color: #fff; margin-bottom: 1rem;">Expected Attendance</h3>
             <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;">1000+</div>
@@ -69,7 +70,7 @@
     </section>
 
     <!-- Schedule -->
-    <section style="background: #f8fafc;">
+    <section style="background: var(--light);">
       <div class="container">
         <h2 class="section-title">Festival Schedule</h2>
         <div class="timeline" data-aos="fade-up">
@@ -211,30 +212,41 @@
     </section>
 
     <!-- Competitions -->
-    <section style="background: #f8fafc;">
+    <section style="background: var(--light);">
       <div class="container">
         <h2 class="section-title">Competitions</h2>
-        <div class="grid-2" style="gap: 2rem; margin-top: 2rem;" data-aos="fade-up">
+        <div class="grid-3" style="gap: 2rem; margin-top: 2rem;" data-aos="fade-up">
           <div class="card">
-            <h3 style="color: #1e293b; margin-bottom: 1rem;">🏆 Data Science Hackathon</h3>
+            <h3 style="color: var(--dark); margin-bottom: 1rem;">🎮 Mortal Kombat</h3>
             <p style="margin-bottom: 1rem;">
-              4-hour coding challenge to solve real-world data problems. Win prizes worth LKR 50,000!
+              Intense 1v1 battles. Show your skills in a knockout bracket.
             </p>
             <div class="badge badge-primary" style="margin-bottom: 1rem;">
-              Top 3 Teams Win Prizes
+              Individual
             </div>
-            <a href="#" class="btn btn-primary">Join Competition</a>
+            <a href="#" class="btn btn-primary">Register</a>
           </div>
 
           <div class="card">
-            <h3 style="color: #1e293b; margin-bottom: 1rem;">🎯 Data Visualization Challenge</h3>
+            <h3 style="color: var(--dark); margin-bottom: 1rem;">🕹️ Valorant</h3>
             <p style="margin-bottom: 1rem;">
-              Create the most impactful and creative visualization. Showcase your artistic and analytical skills.
+              Tactical 5v5 team competition. Coordinate, execute, and win.
             </p>
             <div class="badge badge-primary" style="margin-bottom: 1rem;">
-              Best Visualization Wins
+              Team
             </div>
-            <a href="#" class="btn btn-primary">Join Competition</a>
+            <a href="#" class="btn btn-primary">Register</a>
+          </div>
+
+          <div class="card">
+            <h3 style="color: var(--dark); margin-bottom: 1rem;">📱 PUBG Mobile</h3>
+            <p style="margin-bottom: 1rem;">
+              Squad-based battle royale. Prove your dominance with your team.
+            </p>
+            <div class="badge badge-primary" style="margin-bottom: 1rem;">
+              Team
+            </div>
+            <a href="#" class="btn btn-primary">Register</a>
           </div>
         </div>
       </div>
@@ -242,26 +254,118 @@
 
     <!-- Registration & Call-to-Action -->
     <section class="container">
+      <h2 class="section-title">NextGen Registration</h2>
+      <p class="section-subtitle">Register your team or individual entry and pay the fee</p>
+      <div style="max-width: 720px; margin: 0 auto;" data-aos="fade-up">
+        <form id="ngf-registration-form" onsubmit="handleNgfRegistration(event)">
+          <div class="form-group">
+            <label for="ngf_game">Competition *</label>
+            <select id="ngf_game" name="ngf_game" required>
+              <option value="">Select competition</option>
+              <option value="mortal-kombat">Mortal Kombat (Individual)</option>
+              <option value="valorant">Valorant (Team)</option>
+              <option value="pubg-mobile">PUBG Mobile (Team)</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="team_name_group" style="display: none;">
+            <label for="team_name">Team Name *</label>
+            <input
+              type="text"
+              id="team_name"
+              name="team_name"
+              placeholder="Enter team name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="leader_name">Player/Leader Name *</label>
+            <input
+              type="text"
+              id="leader_name"
+              name="leader_name"
+              required
+              placeholder="Enter full name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="leader_email">Email *</label>
+            <input
+              type="email"
+              id="leader_email"
+              name="leader_email"
+              required
+              placeholder="your.email@nibm.lk"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="leader_phone">Phone *</label>
+            <input
+              type="tel"
+              id="leader_phone"
+              name="leader_phone"
+              required
+              placeholder="Enter mobile number"
+            />
+          </div>
+
+          <div class="form-group" id="team_members_group" style="display: none;">
+            <label for="team_members">Team Members *</label>
+            <textarea
+              id="team_members"
+              name="team_members"
+              placeholder="List team members (Name - Student ID)"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="registration_fee">Registration Fee (LKR) *</label>
+            <input
+              type="number"
+              id="registration_fee"
+              name="registration_fee"
+              required
+              min="1"
+              placeholder="Enter fee amount"
+            />
+          </div>
+
+          <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="ngf_terms" required />
+            <label for="ngf_terms" style="margin: 0;">I confirm details are accurate</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+            Pay & Register
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Registration & Call-to-Action -->
+    <section class="container">
       <h2 class="section-title">Registration Information</h2>
       <div class="grid-2" style="gap: 2rem; margin: 2rem 0;" data-aos="fade-up">
-        <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #fff; padding: 2rem; border-radius: 12px;">
-          <h3 style="color: #fff; margin-bottom: 1rem;">General Admission</h3>
+        <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--light); padding: 2rem; border-radius: 12px;">
+          <h3 style="color: var(--light); margin-bottom: 1rem;">General Admission</h3>
           <div style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Free</div>
           <p style="margin-bottom: 1.5rem;">
             DSC members get free admission to the fest. Non-members pay nominal fee at gate.
           </p>
-          <a href="../join.html" class="btn btn-primary" style="background: #fff; color: #3b82f6; font-weight: 700;">
+          <a href="../join.html" class="btn btn-primary" style="background: var(--light); color: var(--primary); font-weight: 700;">
             Become Member
           </a>
         </div>
 
-        <div style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: #fff; padding: 2rem; border-radius: 12px;">
+        <div style="background: linear-gradient(135deg, var(--ngf-black) 0%, var(--ngf-red) 100%); color: var(--ngf-white); padding: 2rem; border-radius: 12px;">
           <h3 style="color: #fff; margin-bottom: 1rem;">Early Bird Offer</h3>
           <div style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">LKR 500</div>
           <p style="margin-bottom: 1.5rem;">
             Limited early bird passes available. Includes all workshops and lunch.
           </p>
-          <button onclick="registerEarlyBird()" class="btn btn-primary" style="background: #fff; color: #8b5cf6; font-weight: 700;">
+          <button onclick="registerEarlyBird()" class="btn btn-primary" style="background: var(--ngf-white); color: var(--ngf-red); font-weight: 700;">
             Grab Offer Now
           </button>
         </div>
@@ -269,13 +373,13 @@
     </section>
 
     <!-- Call-to-Action -->
-    <section style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: #fff; text-align: center;">
+    <section style="background: linear-gradient(135deg, var(--ngf-black) 0%, var(--ngf-red) 100%); color: var(--ngf-white); text-align: center;">
       <div class="container">
         <h2 style="color: #fff; margin-bottom: 1rem;">Don't Miss NextGen Fest 2026!</h2>
         <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; font-size: 1.1rem;">
           Register now and be part of the biggest data science celebration
         </p>
-        <a href="../join.html" class="btn btn-primary btn-large" style="background: #fff; color: #8b5cf6; font-weight: 700;">
+        <a href="../join.html" class="btn btn-primary btn-large" style="background: var(--ngf-white); color: var(--ngf-red); font-weight: 700;">
           Register Now
         </a>
       </div>
@@ -337,7 +441,51 @@
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/payment-redirect.js"></script>
     <script>
+      const ngfGameSelect = document.getElementById("ngf_game");
+      const teamNameGroup = document.getElementById("team_name_group");
+      const teamMembersGroup = document.getElementById("team_members_group");
+
+      function toggleTeamFields() {
+        const isTeamGame = ngfGameSelect.value === "valorant" || ngfGameSelect.value === "pubg-mobile";
+        teamNameGroup.style.display = isTeamGame ? "block" : "none";
+        teamMembersGroup.style.display = isTeamGame ? "block" : "none";
+        document.getElementById("team_name").required = isTeamGame;
+        document.getElementById("team_members").required = isTeamGame;
+      }
+
+      if (ngfGameSelect) {
+        ngfGameSelect.addEventListener("change", toggleTeamFields);
+        toggleTeamFields();
+      }
+
+      function handleNgfRegistration(event) {
+        event.preventDefault();
+
+        const form = document.getElementById("ngf-registration-form");
+        if (!DCSFunctions.validateForm(form)) {
+          DCSFunctions.showNotification("Please fill all required fields correctly", "error");
+          return;
+        }
+
+        const formData = new FormData(form);
+        const paymentData = {
+          name: formData.get("leader_name"),
+          email: formData.get("leader_email"),
+          phone: formData.get("leader_phone"),
+          amount: Number(formData.get("registration_fee")) || 0,
+          type: "event",
+          event: "nextgen-fest-2026",
+          game: formData.get("ngf_game"),
+          teamName: formData.get("team_name"),
+          teamMembers: formData.get("team_members")
+        };
+
+        sessionStorage.setItem("paymentData", JSON.stringify(paymentData));
+        PaymentHandler.processEventPayment(paymentData);
+      }
+
       function registerEarlyBird() {
         DCSFunctions.showNotification("Redirecting to registration...", "info");
         setTimeout(() => {

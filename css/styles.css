@@ -1,22 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rubik+Glitch&display=swap");
+
 /* ========================================
-   MAIN STYLESHEET - DSC WEBSITE
-   ======================================== */
+  MAIN STYLESHEET - DSC WEBSITE
+  ======================================== */
 
 /* CSS Variables (Theme) */
 :root {
-  /* Colors */
-  --primary: #3b82f6;
-  --primary-dark: #1e40af;
-  --secondary: #60a5fa;
-  --accent: #f59e0b;
-  --success: #22c55e;
-  --danger: #ef4444;
-  --warning: #f59e0b;
-  --dark: #1e293b;
-  --darker: #0f172a;
-  --light: #f8fafc;
-  --lighter: #e2e8f0;
-  --gray: #64748b;
+  /* Colors - DSC Core Palette */
+  --primary: #234d9f; /* Cobalt Blue */
+  --primary-dark: #0c2375; /* Midnight Navy */
+  --secondary: #4da5b0; /* Tech Teal */
+  --accent: #8ed6dd; /* Ice Cyan */
+  --dark: #0c2375; /* Midnight Navy */
+  --darker: #0c2375; /* Midnight Navy */
+  --light: #e3e5e9; /* Cool Silver */
+  --lighter: #e3e5e9; /* Cool Silver */
+  --gray: #234d9f; /* Cobalt Blue */
+
+  /* NGF Palette */
+  --ngf-red: #e81313;
+  --ngf-white: #ffffff;
+  --ngf-black: #000000;
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -27,7 +31,7 @@
   --spacing-2xl: 3rem;
 
   /* Font */
-  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-family: "Poppins", sans-serif;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.25rem;
@@ -60,7 +64,7 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   color: var(--dark);
-  background-color: #fff;
+  background-color: var(--light);
   line-height: 1.6;
 }
 
@@ -94,6 +98,7 @@ h4 {
 
 p {
   margin-bottom: 1.5rem;
+  font-weight: 400;
   color: var(--gray);
 }
 
@@ -145,6 +150,25 @@ a:hover {
 
 .hero .btn {
   animation: slideInUp 0.8s ease 0.2s both;
+}
+
+/* NextGen Fest (NGF) */
+.ngf-hero {
+  background: linear-gradient(135deg, var(--ngf-black) 0%, var(--ngf-red) 100%);
+  color: var(--ngf-white);
+}
+
+.ngf-title {
+  font-family: "Rubik Glitch", "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ngf-logo {
+  height: 90px;
+  width: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
 }
 
 /* Animations */
