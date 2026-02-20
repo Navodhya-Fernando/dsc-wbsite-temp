@@ -13,6 +13,8 @@ function initializeApp() {
   setupSmoothScroll();
   setupAOS();
   setupPaymentRedirect();
+  setupTerminalCountdown();
+  setupNetworkCanvas();
 }
 
 /* ========================================
@@ -269,6 +271,193 @@ function redirectToPaymentGateway(paymentData) {
   document.body.appendChild(form);
   form.submit();
   document.body.removeChild(form);
+}
+
+/* ========================================
+   AGM COUNTDOWN TIMER
+   ======================================== */
+
+function setupTerminalCountdown() {
+  const terminalBody = document.getElementById("terminal-text");
+  if (!terminalBody) return;
+
+  const agmDate = new Date("March 12, 2026 00:00:00").getTime();
+  const bootLines = [
+    "> import community as dsc",
+    "> dsc.target_date = '2026-03-12'",
+    "> System initializing...",
+  ];
+  const bootDelay = 60;
+  const bootPause = 600;
+  let booted = false;
+
+  const typeBootSequence = (lineIndex = 0, charIndex = 0) => {
+    if (lineIndex >= bootLines.length) {
+      booted = true;
+      setTimeout(renderTerminal, bootPause);
+      return;
+    }
+
+    const currentLines = bootLines
+      .slice(0, lineIndex)
+      .map((line) => `${line}<br>`)
+      .join("");
+    const currentLine = bootLines[lineIndex].slice(0, charIndex);
+    terminalBody.innerHTML = `${currentLines}${currentLine}<span class="cursor">_</span>`;
+
+    if (charIndex < bootLines[lineIndex].length) {
+      setTimeout(() => typeBootSequence(lineIndex, charIndex + 1), bootDelay);
+    } else {
+      setTimeout(() => typeBootSequence(lineIndex + 1, 0), 250);
+    }
+  };
+
+  const renderTerminal = () => {
+    if (!booted) return;
+    const now = new Date().getTime();
+    const distance = agmDate - now;
+
+    if (distance <= 0) {
+      clearInterval(timerId);
+      terminalBody.innerHTML =
+        "> import community as dsc<br>" +
+        "> dsc.initialize_agm()<br>" +
+        "> Status: AGM [ACTIVE]<br>" +
+        '<span class="cursor">_</span>';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      .toString()
+      .padStart(2, "0");
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    )
+      .toString()
+      .padStart(2, "0");
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      .toString()
+      .padStart(2, "0");
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+      .toString()
+      .padStart(2, "0");
+
+    terminalBody.innerHTML =
+      "> import community as dsc<br>" +
+      "> dsc.target_date = '2026-03-12'<br>" +
+      "> System initializing...<br>" +
+      `> T-MINUS: ${days}d : ${hours}h : ${minutes}m : ${seconds}s<br>` +
+      '<span class=\"cursor\">_</span>';
+  };
+
+  typeBootSequence();
+  const timerId = setInterval(renderTerminal, 1000);
+}
+
+/* ========================================
+   NETWORK NODES CANVAS
+   ======================================== */
+
+function setupNetworkCanvas() {
+  const canvas = document.getElementById("network-canvas");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  let particlesArray = [];
+
+  function resizeCanvas() {
+    const parent = canvas.parentElement;
+    if (!parent) return;
+    canvas.width = parent.clientWidth;
+    canvas.height = parent.clientHeight;
+  }
+
+  window.addEventListener("resize", () => {
+    resizeCanvas();
+    initParticles();
+  });
+
+  resizeCanvas();
+
+  const mouse = { x: null, y: null, radius: 100 };
+
+  canvas.addEventListener("mousemove", (event) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = event.clientX - rect.left;
+    mouse.y = event.clientY - rect.top;
+  });
+
+  canvas.addEventListener("mouseout", () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = (Math.random() - 0.5) * 1;
+      this.speedY = (Math.random() - 0.5) * 1;
+      this.color = "#4DA5B0";
+    }
+
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+
+      if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+      if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    }
+  }
+
+  function initParticles() {
+    particlesArray = [];
+    const numberOfParticles = (canvas.height * canvas.width) / 9000;
+    for (let i = 0; i < numberOfParticles; i += 1) {
+      particlesArray.push(new Particle());
+    }
+  }
+
+  function connectParticles() {
+    for (let a = 0; a < particlesArray.length; a += 1) {
+      for (let b = a; b < particlesArray.length; b += 1) {
+        const dx = particlesArray[a].x - particlesArray[b].x;
+        const dy = particlesArray[a].y - particlesArray[b].y;
+        const distance = dx * dx + dy * dy;
+
+        if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+          const opacity = 1 - distance / 10000;
+          ctx.strokeStyle = `rgba(35, 77, 159, ${opacity})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+          ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particlesArray.forEach((particle) => {
+      particle.update();
+      particle.draw();
+    });
+    connectParticles();
+    requestAnimationFrame(animate);
+  }
+
+  initParticles();
+  animate();
 }
 
 /* ========================================
