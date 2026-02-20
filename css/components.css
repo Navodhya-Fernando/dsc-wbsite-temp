@@ -34,7 +34,7 @@ nav {
 }
 
 .logo img {
-  height: 50px;
+  height: 80px;
   width: auto;
   display: block;
 }
@@ -335,6 +335,7 @@ section {
   font-weight: 700;
   color: #1e293b;
   text-align: center;
+  margin-top: 3rem;
   margin-bottom: 3rem;
   position: relative;
 }
