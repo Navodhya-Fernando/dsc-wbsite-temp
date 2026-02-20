@@ -1,0 +1,34 @@
+{
+  "name": "dsc-website",
+  "version": "1.0.0",
+  "description": "Official website of Data Science Club (DSC) - NIBM",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8000 -c-1",
+    "build": "echo 'Static site - no build needed'",
+    "test": "echo 'No tests configured'",
+    "deploy": "echo 'Deploy to GitHub Pages using git push origin gh-pages'",
+    "sass:watch": "sass --watch css:css --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dsc-nibm/dsc-website.git"
+  },
+  "keywords": [
+    "data-science",
+    "club",
+    "nibm",
+    "events",
+    "membership"
+  ],
+  "author": "Data Science Club",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.0"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "swiper": "^11.0.0",
+    "http-server": "^14.1.1"
+  }
+}

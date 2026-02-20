@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Data Science Club</title>
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <nav class="container">
+        <a href="index.html" class="logo">Data Science Club</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about/index.html">About</a></li>
+          <li><a href="events/index.html">Events</a></li>
+          <li><a href="projects/index.html">Projects</a></li>
+          <li><a href="resources/index.html">Resources</a></li>
+          <li><a href="join.html">Join Us</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn">☰</button>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Get In Touch</h1>
+        <p>We'd love to hear from you. Let's connect!</p>
+      </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="container">
+      <h2 class="section-title">Contact Information</h2>
+      <div class="grid-3" style="margin: 2rem 0;" data-aos="fade-up">
+        <div class="card">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">📧</div>
+          <h3 style="color: #1e293b; margin-bottom: 0.5rem; text-align: center;">Email</h3>
+          <p style="text-align: center;">
+            <a href="mailto:dsc@nibm.lk" style="color: #3b82f6; font-weight: 600;">dsc@nibm.lk</a>
+          </p>
+          <p style="text-align: center; font-size: 0.9rem; color: #94a3b8;">
+            We respond within 24 hours
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">📱</div>
+          <h3 style="color: #1e293b; margin-bottom: 0.5rem; text-align: center;">Phone</h3>
+          <p style="text-align: center;">
+            <a href="tel:+94701234567" style="color: #3b82f6; font-weight: 600;">+94 70 123 4567</a>
+          </p>
+          <p style="text-align: center; font-size: 0.9rem; color: #94a3b8;">
+            Available during office hours
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">📍</div>
+          <h3 style="color: #1e293b; margin-bottom: 0.5rem; text-align: center;">Location</h3>
+          <p style="text-align: center;">
+            <span style="font-weight: 600;">National Innovation Centre</span><br />
+            NIBM Campus, Colombo
+          </p>
+          <p style="text-align: center; font-size: 0.9rem; color: #94a3b8;">
+            Office: Room 305
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section style="background: #f8fafc;">
+      <div class="container">
+        <h2 class="section-title">Send Us a Message</h2>
+        <div style="max-width: 600px; margin: 0 auto;" data-aos="fade-up">
+          <form onsubmit="handleContactForm(event)">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Enter your name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(Optional) Your phone number"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="membership">Membership Inquiry</option>
+                <option value="events">Event Information</option>
+                <option value="projects">Project Collaboration</option>
+                <option value="resources">Resources Request</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Tell us how we can help..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Office Hours -->
+    <section class="container">
+      <h2 class="section-title">Office Hours</h2>
+      <div class="grid-2" style="gap: 3rem; margin: 2rem 0; max-width: 600px; margin-left: auto; margin-right: auto;" data-aos="fade-up">
+        <div>
+          <h3 style="color: #1e293b; margin-bottom: 1rem;">📅 Weekdays</h3>
+          <p style="font-size: 1.1rem; color: #3b82f6; font-weight: 600;">
+            Monday - Friday<br/>
+            <span style="color: #64748b; font-size: 1rem;">10:00 AM - 5:00 PM</span>
+          </p>
+        </div>
+        <div>
+          <h3 style="color: #1e293b; margin-bottom: 1rem;">📅 Weekends</h3>
+          <p style="font-size: 1.1rem; color: #3b82f6; font-weight: 600;">
+            Saturday & Sunday<br/>
+            <span style="color: #64748b; font-size: 1rem;">By Appointment</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media -->
+    <section style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #fff; text-align: center;">
+      <div class="container">
+        <h2 style="color: #fff; margin-bottom: 1rem;">Follow Us</h2>
+        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem;">
+          Connect with us on social media for updates and community interactions
+        </p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+          <a href="https://facebook.com/dscnibm" class="btn btn-primary" style="background: rgba(255, 255, 255, 0.2); border: 2px solid #fff; color: #fff;">
+            Facebook
+          </a>
+          <a href="https://twitter.com/dscnibm" class="btn btn-primary" style="background: rgba(255, 255, 255, 0.2); border: 2px solid #fff; color: #fff;">
+            Twitter
+          </a>
+          <a href="https://linkedin.com/company/dscnibm" class="btn btn-primary" style="background: rgba(255, 255, 255, 0.2); border: 2px solid #fff; color: #fff;">
+            LinkedIn
+          </a>
+          <a href="https://instagram.com/dscnibm" class="btn btn-primary" style="background: rgba(255, 255, 255, 0.2); border: 2px solid #fff; color: #fff;">
+            Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="grid-2" style="gap: 2rem;">
+        <div>
+          <h4 style="color: #1e293b; margin-bottom: 0.5rem;">❓ How can I contact the board?</h4>
+          <p style="color: #64748b;">
+            You can email us at dsc@nibm.lk or call +94 70 123 4567. We respond within 24 hours.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: #1e293b; margin-bottom: 0.5rem;">❓ How do I report an issue?</h4>
+          <p style="color: #64748b;">
+            Please send us an email with details of the issue. Our technical team will assist you.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: #1e293b; margin-bottom: 0.5rem;">❓ Can I volunteer for DSC?</h4>
+          <p style="color: #64748b;">
+            Yes! We'd love to have you. Contact us with your interests and background.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: #1e293b; margin-bottom: 0.5rem;">❓ How can I sponsor an event?</h4>
+          <p style="color: #64748b;">
+            Companies interested in sponsoring can reach out to our events team via email.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About DSC</h3>
+          <p>
+            Data Science Club is a student-led organization at NIBM dedicated to
+            fostering data science skills and innovation.
+          </p>
+          <div class="social-links">
+            <a href="#" title="Facebook">f</a>
+            <a href="#" title="Twitter">𝕏</a>
+            <a href="#" title="LinkedIn">in</a>
+            <a href="#" title="Instagram">📷</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about/index.html">About Us</a></li>
+            <li><a href="events/index.html">Events</a></li>
+            <li><a href="projects/index.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="resources/tutorials.html">Tutorials</a></li>
+            <li><a href="resources/articles.html">Articles</a></li>
+            <li><a href="resources/quizzes.html">Quizzes</a></li>
+            <li><a href="resources/model-papers.html">Model Papers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📧 <a href="mailto:dsc@nibm.lk">dsc@nibm.lk</a></p>
+          <p>📱 +94 70 123 4567</p>
+          <p>📍 National Innovation Centre, NIBM</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Data Science Club - NIBM. All rights reserved. | Designed with
+          ❤️ by DSC Team
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      function handleContactForm(event) {
+        event.preventDefault();
+        const form = event.target;
+        
+        if (!DCSFunctions.validateForm(form)) {
+          DCSFunctions.showNotification("Please fill all required fields correctly", "error");
+          return;
+        }
+
+        // In a real application, you would send this to a backend
+        DCSFunctions.showNotification("Message sent successfully! We'll get back to you soon.", "success");
+        form.reset();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Us - Data Science Club</title>
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <nav class="container">
+        <a href="index.html" class="logo">Data Science Club</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about/index.html">About</a></li>
+          <li><a href="events/index.html">Events</a></li>
+          <li><a href="projects/index.html">Projects</a></li>
+          <li><a href="resources/index.html">Resources</a></li>
+          <li><a href="join.html" class="active">Join Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn">☰</button>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Join Data Science Club</h1>
+        <p>Become part of a thriving community of data science enthusiasts</p>
+      </div>
+    </section>
+
+    <!-- Membership Tiers -->
+    <section class="container">
+      <h2 class="section-title">Membership Plans</h2>
+      <div class="grid-3" style="margin: 2rem 0;" data-aos="fade-up">
+        <div class="card" style="border-top: 4px solid #3b82f6;">
+          <h3 style="color: #1e293b; margin-bottom: 0.5rem;">Standard Member</h3>
+          <p style="font-size: 1.5rem; font-weight: 700; color: #3b82f6; margin: 1rem 0;">
+            LKR 500<span style="font-size: 0.8rem; color: #64748b;">/semester</span>
+          </p>
+          <ul style="list-style: none; margin: 1.5rem 0;">
+            <li style="margin-bottom: 0.75rem;">✓ Event attendance</li>
+            <li style="margin-bottom: 0.75rem;">✓ Resource library access</li>
+            <li style="margin-bottom: 0.75rem;">✓ Community support</li>
+            <li style="margin-bottom: 0.75rem;">✓ Member certificate</li>
+            <li style="margin-bottom: 0.75rem;">✗ Leadership roles</li>
+          </ul>
+          <button onclick="registerMembership('standard')" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            Register Now
+          </button>
+        </div>
+
+        <div class="card" style="border-top: 4px solid #f59e0b; transform: scale(1.05);">
+          <div style="background: #f59e0b; color: #fff; padding: 0.5rem; border-radius: 4px; margin-bottom: 1rem; text-align: center; font-weight: 600;">
+            MOST POPULAR
+          </div>
+          <h3 style="color: #1e293b; margin-bottom: 0.5rem;">Premium Member</h3>
+          <p style="font-size: 1.5rem; font-weight: 700; color: #f59e0b; margin: 1rem 0;">
+            LKR 1000<span style="font-size: 0.8rem; color: #64748b;">/semester</span>
+          </p>
+          <ul style="list-style: none; margin: 1.5rem 0;">
+            <li style="margin-bottom: 0.75rem;">✓ All Standard benefits</li>
+            <li style="margin-bottom: 0.75rem;">✓ Workshop priority access</li>
+            <li style="margin-bottom: 0.75rem;">✓ Mentorship program</li>
+            <li style="margin-bottom: 0.75rem;">✓ Project collaboration</li>
+            <li style="margin-bottom: 0.75rem;">✓ Networking events</li>
+          </ul>
+          <button onclick="registerMembership('premium')" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            Register Now
+          </button>
+        </div>
+
+        <div class="card" style="border-top: 4px solid #22c55e;">
+          <h3 style="color: #1e293b; margin-bottom: 0.5rem;">Leadership Member</h3>
+          <p style="font-size: 1.5rem; font-weight: 700; color: #22c55e; margin: 1rem 0;">
+            LKR 1500<span style="font-size: 0.8rem; color: #64748b;">/semester</span>
+          </p>
+          <ul style="list-style: none; margin: 1.5rem 0;">
+            <li style="margin-bottom: 0.75rem;">✓ All Premium benefits</li>
+            <li style="margin-bottom: 0.75rem;">✓ Leadership opportunities</li>
+            <li style="margin-bottom: 0.75rem;">✓ Board positions eligible</li>
+            <li style="margin-bottom: 0.75rem;">✓ Budget allocation</li>
+            <li style="margin-bottom: 0.75rem;">✓ VIP event access</li>
+          </ul>
+          <button onclick="registerMembership('leadership')" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            Register Now
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Benefits -->
+    <section style="background: #f8fafc;">
+      <div class="container">
+        <h2 class="section-title">What You Get</h2>
+        <div class="benefits-grid" data-aos="fade-up">
+          <div class="benefit-item">Access to exclusive workshops and seminars</div>
+          <div class="benefit-item">Comprehensive learning resource library</div>
+          <div class="benefit-item">Professional networking opportunities</div>
+          <div class="benefit-item">Collaboration on innovative projects</div>
+          <div class="benefit-item">Mentorship from industry professionals</div>
+          <div class="benefit-item">Career guidance and job referrals</div>
+          <div class="benefit-item">Certificate of membership and achievements</div>
+          <div class="benefit-item">Discounted event registration fees</div>
+          <div class="benefit-item">Active community support and mentoring</div>
+          <div class="benefit-item">Monthly newsletters with latest updates</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="container">
+      <h2 class="section-title">Register Now</h2>
+      <div style="max-width: 600px; margin: 0 auto;" data-aos="fade-up">
+        <form id="registration-form" onsubmit="handleRegistration(event)">
+          <div class="form-group">
+            <label for="full_name">Full Name *</label>
+            <input
+              type="text"
+              id="full_name"
+              name="full_name"
+              required
+              placeholder="Enter your full name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="your.email@nibm.lk"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="Enter 10-digit mobile number"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="student_id">Student ID *</label>
+            <input
+              type="text"
+              id="student_id"
+              name="student_id"
+              required
+              placeholder="e.g., BIT-2023-001"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="program">Program/Department *</label>
+            <select id="program" name="program" required>
+              <option value="">Select your program</option>
+              <option value="BIT">Bachelor of IT</option>
+              <option value="BIS">Bachelor of Information Systems</option>
+              <option value="MCSIT">MSc IT</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="membership_type">Membership Type *</label>
+            <select id="membership_type" name="membership_type" required>
+              <option value="">Select membership type</option>
+              <option value="standard">Standard Member (LKR 500)</option>
+              <option value="premium">Premium Member (LKR 1000)</option>
+              <option value="leadership">Leadership Member (LKR 1500)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="interests">Areas of Interest</label>
+            <textarea
+              id="interests"
+              name="interests"
+              placeholder="Tell us about your interests in data science..."
+            ></textarea>
+          </div>
+
+          <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              required
+            />
+            <label for="terms" style="margin: 0;">
+              I agree to the <a href="#" style="color: #3b82f6;">terms and conditions</a> *
+            </label>
+          </div>
+
+          <div class="alert alert-info" style="margin-bottom: 1.5rem;">
+            💳 Secure payment will be processed through certified payment gateway. No financial data is stored on our servers.
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large" style="width: 100%; font-size: 1.1rem;">
+            Proceed to Payment
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="background: #f8fafc;">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="grid-2" style="gap: 2rem;">
+          <div>
+            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">📅 When is membership valid?</h4>
+            <p style="color: #64748b;">
+              Membership is valid for one academic semester. You can renew at the end of each
+              semester to continue receiving benefits.
+            </p>
+          </div>
+          <div>
+            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">💰 Can I change my membership type?</h4>
+            <p style="color: #64748b;">
+              Yes, you can upgrade or downgrade your membership. Contact us for adjustment details.
+            </p>
+          </div>
+          <div>
+            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">🔒 Is my payment secure?</h4>
+            <p style="color: #64748b;">
+              Absolutely! We use certified payment gateways with HTTPS encryption. Your financial
+              data is never stored on our servers.
+            </p>
+          </div>
+          <div>
+            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">📧 How will I receive my membership confirmation?</h4>
+            <p style="color: #64748b;">
+              You'll receive a confirmation email immediately after successful payment with your
+              membership details.
+            </p>
+          </div>
+          <div>
+            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">🎓 Are there scholarships available?</h4>
+            <p style="color: #64748b;">
+              Yes, limited scholarships are available for outstanding students. Contact us to apply.
+            </p>
+          </div>
+          <div>
+            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">❌ Can I get a refund?</h4>
+            <p style="color: #64748b;">
+              Refunds are available within 7 days of payment if requested. Please contact our finance team.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call-to-Action -->
+    <section style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #fff; text-align: center;">
+      <div class="container">
+        <h2 style="color: #fff; margin-bottom: 1rem;">Ready to Start Your Journey?</h2>
+        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem;">
+          Join 500+ data science enthusiasts today
+        </p>
+        <a href="#registration-form" class="btn btn-primary btn-large" style="background: #fff; color: #3b82f6; font-weight: 700;">
+          Complete Registration
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About DSC</h3>
+          <p>
+            Data Science Club is a student-led organization at NIBM dedicated to
+            fostering data science skills and innovation.
+          </p>
+          <div class="social-links">
+            <a href="#" title="Facebook">f</a>
+            <a href="#" title="Twitter">𝕏</a>
+            <a href="#" title="LinkedIn">in</a>
+            <a href="#" title="Instagram">📷</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about/index.html">About Us</a></li>
+            <li><a href="events/index.html">Events</a></li>
+            <li><a href="projects/index.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="resources/tutorials.html">Tutorials</a></li>
+            <li><a href="resources/articles.html">Articles</a></li>
+            <li><a href="resources/quizzes.html">Quizzes</a></li>
+            <li><a href="resources/model-papers.html">Model Papers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📧 <a href="mailto:dsc@nibm.lk">dsc@nibm.lk</a></p>
+          <p>📱 +94 70 123 4567</p>
+          <p>📍 National Innovation Centre, NIBM</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Data Science Club - NIBM. All rights reserved. | Designed with
+          ❤️ by DSC Team
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/payment-redirect.js"></script>
+    <script>
+      function registerMembership(type) {
+        document.getElementById("membership_type").value = type;
+        document.getElementById("registration-form").scrollIntoView({ behavior: "smooth" });
+      }
+
+      function handleRegistration(event) {
+        event.preventDefault();
+        
+        // Validate form
+        const form = document.getElementById("registration-form");
+        if (!DCSFunctions.validateForm(form)) {
+          DCSFunctions.showNotification("Please fill all required fields correctly", "error");
+          return;
+        }
+
+        // Prepare data for payment
+        const formData = new FormData(form);
+        const membershipPrices = {
+          standard: 500,
+          premium: 1000,
+          leadership: 1500
+        };
+        
+        const membershipType = formData.get("membership_type");
+        const amount = membershipPrices[membershipType] || 0;
+
+        const paymentData = {
+          fullName: formData.get("full_name"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          studentId: formData.get("student_id"),
+          program: formData.get("program"),
+          membershipType: membershipType,
+          amount: amount,
+          type: "membership"
+        };
+
+        // Store in session
+        sessionStorage.setItem("paymentData", JSON.stringify(paymentData));
+        
+        // Redirect to payment
+        DCSFunctions.redirectToPaymentGateway(paymentData);
+      }
+    </script>
+  </body>
+</html>
