@@ -2,9 +2,13 @@
    MAIN JAVASCRIPT - DSC WEBSITE
    ======================================== */
 
-document.addEventListener("DOMContentLoaded", function () {
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function () {
+    initializeApp();
+  });
+} else {
   initializeApp();
-});
+}
 
 function initializeApp() {
   setupMobileMenu();
@@ -363,6 +367,7 @@ function setupNetworkCanvas() {
   if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
+  if (!ctx) return;
   let particlesArray = [];
 
   function resizeCanvas() {
@@ -377,7 +382,15 @@ function setupNetworkCanvas() {
     initParticles();
   });
 
-  resizeCanvas();
+  window.addEventListener("load", () => {
+    resizeCanvas();
+    initParticles();
+  });
+
+  requestAnimationFrame(() => {
+    resizeCanvas();
+    initParticles();
+  });
 
   const mouse = { x: null, y: null, radius: 100 };
 
