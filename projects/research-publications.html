@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Research Publications - Data Science Club</title>
-		<link rel="stylesheet" href="../css/components.css?v=14" />
-		<link rel="stylesheet" href="../css/styles.css?v=14" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-		/>
-	</head>
-	<body>
-		<!-- Header & Navigation -->
-		    <header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Publications | Data Science Club - NIBM</title>
+    <link rel="stylesheet" href="../css/components.css?v=21" />
+    <link rel="stylesheet" href="../css/styles.css?v=21" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  </head>
+  <body>
+    
+    <header>
       <nav class="container">
         <a href="../index.html" class="logo">
           <img src="../assets/images/DSC Logo.png" alt="DSC Logo" style="height: 80px; width: auto" />
         </a>
         <ul class="nav-links">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="index.html">About Us</a></li>
+          <li><a href="../about/index.html">About Us</a></li>
           <li><a href="../events/index.html">Events</a></li>
-          <li><a href="../projects/index.html">Projects</a></li>
+          <li><a href="index.html" class="active">Projects</a></li>
           <li><a href="../resources/index.html">Resources</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
           <li><a href="../join.html" class="btn btn-primary btn-small nav-cta">Join Us</a></li>
@@ -31,58 +28,116 @@
       </nav>
     </header>
 
-		<!-- Hero Section -->
-		<section class="hero">
-			<div class="hero-content">
-				<h1>Research Publications</h1>
-				<p>Explore research outputs, case studies, and technical papers from DSC.</p>
-			</div>
-		</section>
+    <section class="page-hero" style="text-align: center; padding: 7rem 2rem 5rem;">
+      <div class="container" style="position: relative; z-index: 1;" data-aos="zoom-in" data-aos-duration="800">
+        <span class="badge badge-accent mb-4" style="font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;">[ PRJ.LOG // RESEARCH ]</span>
+        <h1 class="page-title" style="font-size: 4rem; margin-bottom: 1.5rem;">Academic <span class="text-gradient">Excellence.</span></h1>
+        <p class="page-subtitle" style="margin: 0 auto; max-width: 650px; font-size: 1.15rem; line-height: 1.7;">
+          Explore peer-reviewed papers, comprehensive case studies, and advanced academic research conducted by the members of the Data Scientists' Club.
+        </p>
+      </div>
+    </section>
 
-		<!-- Publications -->
-		<section class="container">
-			<h2 class="section-title">Featured Papers</h2>
-			<div class="grid-2" style="gap: 2rem; margin-top: 2rem;" data-aos="fade-up">
-				<div class="card">
-					<h3 class="card-title">Predicting Student Success Using ML</h3>
-					<p class="card-text">A study on early-warning models using academic and engagement data.</p>
-				</div>
-				<div class="card">
-					<h3 class="card-title">Retail Demand Forecasting</h3>
-					<p class="card-text">Time-series models for forecasting inventory needs in SMEs.</p>
-				</div>
-				<div class="card">
-					<h3 class="card-title">Sentiment Analysis for Campus Feedback</h3>
-					<p class="card-text">NLP techniques for understanding student feedback at scale.</p>
-				</div>
-				<div class="card">
-					<h3 class="card-title">Smart Energy Optimization</h3>
-					<p class="card-text">Optimizing energy usage using predictive analytics.</p>
-				</div>
-			</div>
-		</section>
+    <section class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
+      <h2 class="section-title" style="text-align: center; margin-top: 0;">Featured Publication</h2>
+      <div class="featured-event" data-aos="fade-up" style="min-height: 350px;">
+        <div class="featured-visual" style="background-image: url('../assets/images/research-main.jpg');">
+          <div class="featured-overlay" style="background: linear-gradient(135deg, rgba(35, 77, 159, 0.8) 0%, rgba(12, 35, 117, 0.9) 100%);"></div>
+          <span class="featured-date" style="font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; letter-spacing: 1px; background: var(--primary); color: var(--white);">PEER REVIEWED</span>
+        </div>
+        <div class="featured-content">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <span class="badge badge-primary" style="background: rgba(35, 77, 159, 0.1); color: var(--primary-dark);">Vol. 4, Issue 2</span>
+            <span class="badge badge-success" style="background: rgba(77, 165, 176, 0.15); color: var(--primary);">Predictive Modeling</span>
+          </div>
+          <h2>Predictive Modeling for Student Retention in Higher Education</h2>
+          <p>
+            <strong>Abstract:</strong> This research paper explores the application of ensemble machine learning algorithms (Random Forest & XGBoost) to identify at-risk students based on early-semester engagement metrics. The resulting model achieved an 89% accuracy rate, offering institutions a viable framework for proactive academic intervention.
+          </p>
+          <div class="event-meta" style="margin-top: 1rem;">
+            <span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Lead Authors: D. Gunawardhana, H. Perera</span>
+            <span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Published: Nov 2025</span>
+          </div>
+          <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+            <a href="#" class="btn btn-primary">Read Full Paper</a>
+            <a href="#" class="btn btn-secondary">Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- Research Areas -->
-		<section style="background: var(--light);">
-			<div class="container">
-				<h2 class="section-title">Research Areas</h2>
-				<div class="grid-3" style="margin-top: 2rem;" data-aos="fade-up">
-					<div class="card"><h3 class="card-title">Machine Learning</h3></div>
-					<div class="card"><h3 class="card-title">Data Visualization</h3></div>
-					<div class="card"><h3 class="card-title">Natural Language Processing</h3></div>
-				</div>
-			</div>
-		</section>
+    <section style="background-color: var(--light); padding-top: 5rem; padding-bottom: 6rem;">
+      <div class="container">
+        <h2 class="section-title">Research Archive & Case Studies</h2>
+        
+        <div class="grid-3" style="margin-top: 3rem;">
+          
+          <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="project-image" style="background-image: url('../assets/images/research-agri.jpg'); position: relative;">
+               <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(5, 150, 105, 0.7) 0%, rgba(6, 78, 59, 0.9) 100%); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <svg width="60" height="60" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(5, 150, 105, 0.1); color: #059669;">Case Study</span>
+                <span class="project-tag">Deep Learning</span>
+              </div>
+              <h3 class="project-title">AI in Precision Agriculture</h3>
+              <p class="project-description">A comprehensive case study analyzing the impact of Convolutional Neural Networks (CNNs) in forecasting crop yields based on satellite imagery of Sri Lankan farmlands.</p>
+              <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; margin-top: auto;">View Abstract →</a>
+            </div>
+          </div>
 
-		<!-- CTA -->
-		<section class="container" style="text-align: center;">
-			<h2 class="section-title">Submit Your Research</h2>
-			<p class="section-subtitle">We welcome papers, case studies, and project write-ups.</p>
-			<a href="../contact.html" class="btn btn-primary btn-large">Submit a Paper</a>
-		</section>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image" style="background-image: url('../assets/images/research-nlp.jpg'); position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(147, 51, 234, 0.7) 0%, rgba(88, 28, 135, 0.9) 100%); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <svg width="60" height="60" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(147, 51, 234, 0.1); color: #9333ea;">Conference Paper</span>
+                <span class="project-tag">NLP</span>
+              </div>
+              <h3 class="project-title">Multilingual Sentiment Analysis</h3>
+              <p class="project-description">Presented at the 2025 National AI Summit. This paper investigates the complexities of parsing and analyzing sentiment in mixed Sinhala-English (Singlish) social media text.</p>
+              <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; margin-top: auto;">View Abstract →</a>
+            </div>
+          </div>
 
-		<!-- Footer -->
-		    <footer>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image" style="background-image: url('../assets/images/research-urban.jpg'); position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(234, 179, 8, 0.7) 0%, rgba(202, 138, 4, 0.9) 100%); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <svg width="60" height="60" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(202, 138, 4, 0.1); color: #ca8a04;">Published Paper</span>
+                <span class="project-tag">Spatial Analytics</span>
+              </div>
+              <h3 class="project-title">Urban Transit Optimization</h3>
+              <p class="project-description">A robust statistical analysis applying spatial clustering algorithms (DBSCAN) to GPS transit data to propose optimized bus routing in the greater Colombo area.</p>
+              <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; margin-top: auto;">View Abstract →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card" data-aos="fade-up">
+          <h2>Join Our Research Team</h2>
+          <p>We provide mentorship, datasets, and computing resources for students looking to publish their first academic paper. Elevate your portfolio and contribute to the scientific community.</p>
+          <a href="../contact.html" class="btn btn-accent btn-large">Propose a Study</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
       <div class="footer-content container">
         
         <div class="footer-brand">
@@ -112,7 +167,7 @@
           <h3>Quick Links</h3>
           <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="index.html">About Us</a></li>
+            <li><a href="../about/index.html">About Us</a></li>
             <li><a href="../events/index.html">Events</a></li>
             <li><a href="../projects/index.html">Projects</a></li>
             <li><a href="../resources/index.html">Resources</a></li>
@@ -149,7 +204,7 @@
       </div>
     </footer>
 
-		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-		<script src="../js/main.js?v=14" defer></script>
-	</body>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js?v=21" defer></script>
+  </body>
 </html>

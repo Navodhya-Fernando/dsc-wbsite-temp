@@ -2305,3 +2305,57 @@ section {
     font-size: 1.8rem;
   }
 }
+/* ========================================
+   PROJECT ICON VARIANTS
+   ======================================== */
+.tool-icon {
+  background: rgba(77, 165, 176, 0.15);
+  color: var(--primary);
+}
+
+.research-icon {
+  background: rgba(142, 214, 221, 0.2);
+  color: var(--primary-dark);
+}
+
+.action-item:hover .tool-icon {
+  background: var(--primary);
+  color: var(--white);
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.action-item:hover .research-icon {
+  background: var(--accent);
+  color: var(--darker);
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Paper/Link Button Hover Effects */
+.project-card a[style*="color: var(--primary)"] {
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.project-card a[style*="color: var(--primary)"]:hover {
+  color: var(--primary-dark);
+  transform: translateX(4px);
+}
+
+.project-card a[style*="color: var(--primary)"]::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.project-card a[style*="color: var(--primary)"]:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
