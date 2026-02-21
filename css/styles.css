@@ -5,6 +5,13 @@
   MAIN STYLESHEET - DSC WEBSITE
   ======================================== */
 
+/* Fix AOS Animation Horizontal Scroll Bug */
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
 /* CSS Variables (Theme) */
 :root {
   /* Colors - Web-Optimized UI Palette */
@@ -672,7 +679,7 @@ h6 {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
 }
 
 .event-card:hover {
@@ -1012,6 +1019,10 @@ h6 {
 
   section {
     padding: 2.5rem 0.8rem;
+  }
+
+  .event-image {
+    height: 180px;
   }
 }
 

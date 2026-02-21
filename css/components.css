@@ -21,6 +21,8 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: relative;
 }
 
 nav {
@@ -30,6 +32,8 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
+  width: 100%;
 }
 
 .logo {
@@ -110,11 +114,37 @@ nav {
   }
 
   .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 1.5rem;
     gap: 1.5rem;
+    z-index: 999;
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links.nav-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .nav-links a:not(.btn) {
-    font-size: 0.9rem;
+    color: var(--white) !important;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links a:not(.btn)::after {
+    display: none;
   }
 
   .nav-links .nav-cta {
@@ -133,45 +163,14 @@ nav {
   }
 
   .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
     top: 60px;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     padding: 1rem;
     gap: 1.5rem;
-    z-index: 999;
-    transform: translateY(-150%);
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .nav-links.nav-active {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .nav-links a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 0;
   }
 
   .nav-links a:not(.btn) {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .nav-links a:not(.btn)::after {
-    display: none;
-  }
-
-  .nav-links a:not(.btn):hover {
-    color: var(--accent);
+    color: var(--white) !important;
   }
 
   .nav-links .nav-cta {
@@ -199,7 +198,6 @@ nav {
   }
 
   .nav-links {
-    top: 50px;
     padding: 0.8rem;
     gap: 1rem;
   }
@@ -221,6 +219,8 @@ nav {
   color: var(--dark);
   font-size: 1.5rem;
   cursor: pointer;
+  z-index: 1001;
+  position: relative;
 }
 
 /* ========================================
@@ -367,7 +367,7 @@ nav {
    FLOATING CTA SECTION
    ======================================== */
 .cta-section {
-  padding: 3rem 2rem 6rem; /* Reduced bottom padding */
+  padding: 3rem 2rem 10rem;
   position: relative;
   z-index: 10;
   background-color: transparent;
@@ -380,7 +380,8 @@ nav {
   text-align: center;
   color: var(--white);
   box-shadow: 0 20px 40px rgba(12, 35, 117, 0.15);
-  transform: translateY(80px); /* Pushes the card exactly 80px down into the footer */
+  margin-top: -60px;
+  margin-bottom: 60px;
   position: relative;
   overflow: hidden;
 }
@@ -433,16 +434,16 @@ nav {
 @media (max-width: 768px) {
   .cta-card {
     padding: 2.5rem 2rem;
-    transform: translateY(0);
-    margin-bottom: -2rem;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .cta-section {
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
   }
 
   footer {
-    padding-top: 60px;
+    padding-top: 80px;
   }
 
   .cta-card h2 {
@@ -464,17 +465,17 @@ nav {
 @media (max-width: 640px) {
   .cta-card {
     padding: 2rem 1.5rem;
-    transform: translateY(0);
-    margin-bottom: -1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
     border-radius: 16px;
   }
 
   .cta-section {
-    padding-bottom: 1.5rem;
+    padding-bottom: 3rem;
   }
 
   footer {
-    padding-top: 50px;
+    padding-top: 70px;
   }
 
   .cta-card h2 {
@@ -500,16 +501,16 @@ nav {
 @media (max-width: 480px) {
   .cta-card {
     padding: 1.5rem 1.2rem;
-    transform: translateY(0);
-    margin-bottom: -1rem;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .cta-section {
-    padding-bottom: 1rem;
+    padding-bottom: 2.5rem;
   }
 
   footer {
-    padding-top: 40px;
+    padding-top: 60px;
   }
 
   .cta-card h2 {
@@ -1247,6 +1248,13 @@ section {
 }
 
 @media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
   .page-hero {
     padding: 4rem 1.5rem 3rem;
   }
@@ -1258,11 +1266,27 @@ section {
   }
 
   .page-title {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
     margin-bottom: 0.8rem;
   }
 
   .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .metric-number {
+    font-size: 2.5rem;
+  }
+
+  .holo-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .holo-content p {
     font-size: 1rem;
   }
 }
@@ -1278,7 +1302,7 @@ section {
   }
 
   .page-title {
-    font-size: 2rem;
+    font-size: 2rem !important;
     margin-bottom: 0.6rem;
     line-height: 1.3;
   }
@@ -1286,6 +1310,14 @@ section {
   .page-subtitle {
     font-size: 0.95rem;
     line-height: 1.5;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .metric-number {
+    font-size: 2rem;
   }
 
   .hero-split {
@@ -1296,6 +1328,14 @@ section {
   .hero-visualizer {
     max-width: 100%;
     height: 200px;
+  }
+
+  .holo-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .holo-content p {
+    font-size: 0.95rem;
   }
 }
 
@@ -1310,13 +1350,29 @@ section {
   }
 
   .page-title {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
     margin-bottom: 0.5rem;
   }
 
   .page-subtitle {
     font-size: 0.85rem;
     line-height: 1.4;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .metric-number {
+    font-size: 1.8rem;
+  }
+
+  .holo-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .holo-content p {
+    font-size: 0.85rem;
   }
 
   .hero-visualizer {
@@ -1614,7 +1670,7 @@ section {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
 }
 
 .hub-card:hover {
@@ -3240,4 +3296,203 @@ section {
 .project-card a[style*="color: var(--primary)"]:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* =========================================
+   CLEAN MOBILE MENU (DROPDOWN)
+   ========================================= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 1.5rem;
+    gap: 1.2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    
+    /* Smooth slide-down animation */
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.nav-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Normal, clean font size for mobile */
+  .nav-links a:not(.btn) {
+    font-size: 1.05rem !important;
+    color: var(--dark) !important;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease !important;
+  }
+
+  .nav-links a:not(.btn):hover {
+    color: var(--primary) !important;
+    background-color: rgba(77, 165, 176, 0.1);
+    transform: scale(1.05);
+  }
+
+  /* Fix CTA and footer collision */
+  .cta-card {
+    transform: translateY(0);
+    margin-bottom: -1rem;
+  }
+
+  footer {
+    padding-top: 60px;
+  }
+}
+
+/* =========================================
+   MOBILE OVERLAP & SPACING FIXES 
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* 1. Fix the Sub-Page Hero vs Stats Cards */
+  .stats-section {
+    margin-top: -1.5rem !important;
+  }
+  .page-hero {
+    padding-bottom: 3.5rem !important;
+  }
+
+  /* 2. Fix the CTA overlapping the Footer */
+  .cta-card {
+    transform: translateY(0) !important;
+    margin-bottom: -1rem;
+  }
+  footer {
+    padding-top: 60px !important;
+  }
+  
+  /* 3. Ensure Safari doesn't overlap Grid Cards */
+  .event-card, .hub-card {
+    height: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Give the data visualizer animation enough room so cards don't touch it */
+  .hero-visualizer {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 4. Fix Index Page Terminal hitting the text */
+  .hero-container {
+    gap: 3rem !important;
+  }
+  
+  /* Prevent the T-MINUS string from breaking the terminal box */
+  .terminal-body {
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+}
+
+/* =========================================
+   SUB-PAGE MOBILE POLISH (HERO & TABS)
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* 1. Hide the glitchy black data visualizer entirely on mobile */
+  .hero-visualizer {
+    display: none !important;
+  }
+
+  /* 2. Give the Hero text massive breathing room at the bottom */
+  .page-hero {
+    padding-bottom: 6rem !important;
+  }
+
+  /* 3. Reduce the aggressive pull-up on the tabs/bars */
+  .event-action-bar,
+  .search-filter-wrapper,
+  .stats-section {
+    margin-top: -2rem !important;
+    position: relative;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even more protection for tiny screens like iPhone SE */
+  .page-hero {
+    padding-bottom: 5rem !important;
+  }
+  
+  .event-action-bar,
+  .search-filter-wrapper {
+    margin-top: -1.5rem !important;
+  }
+
+  /* Center the hero text on mobile now that the visualizer is gone */
+  .hero-text {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-text .badge-accent {
+    margin: 0 auto 1rem auto;
+    display: inline-block;
+  }
+  
+  .page-subtitle {
+    margin: 0 auto;
+  }
+}
+
+/* =========================================
+   EVENTS & PROJECTS PAGE CARD FIX
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* Push the action bar/card section down so it doesn't overlap hero text */
+  section[style*="transform: translateY(-50%)"] {
+    transform: translateY(0) !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  /* Alternative selector for event-action-bar container */
+  .event-action-bar {
+    margin-top: 2rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  section[style*="transform: translateY(-50%)"] {
+    transform: translateY(0) !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .event-action-bar {
+    margin-top: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section[style*="transform: translateY(-50%)"] {
+    transform: translateY(0) !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .event-action-bar {
+    margin-top: 1rem !important;
+  }
 }

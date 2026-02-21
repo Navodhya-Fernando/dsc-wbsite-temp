@@ -31,15 +31,21 @@ function setupMobileMenu() {
 
   if (!mobileMenuBtn) return;
 
-  mobileMenuBtn.addEventListener("click", function () {
+  mobileMenuBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
     navLinks.classList.toggle("nav-active");
   });
 
-  // Close menu when a link is clicked
-  document.querySelectorAll(".nav-links a").forEach((link) => {
-    link.addEventListener("click", function () {
+  // Close when clicking anywhere else
+  document.addEventListener("click", function (e) {
+    if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
       navLinks.classList.remove("nav-active");
-    });
+    }
+  });
+
+  // Close when a link is clicked
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => navLinks.classList.remove("nav-active"));
   });
 }
 
