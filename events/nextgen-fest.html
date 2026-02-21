@@ -4,409 +4,390 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NextGen Fest 2026 - Data Science Club</title>
-    <link rel="stylesheet" href="../css/components.css?v=14" />
-    <link rel="stylesheet" href="../css/styles.css?v=14" />
+    <link rel="stylesheet" href="../css/components.css?v=16" />
+    <link rel="stylesheet" href="../css/styles.css?v=16" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
     />
   </head>
-  <body>
-    <!-- Header & Navigation -->
-        <header>
+  <body class="ngf-body">
+    <header>
       <nav class="container">
         <a href="../index.html" class="logo">
-          <img src="../assets/images/DSC Logo.png" alt="DSC Logo" style="height: 80px; width: auto" />
+          <img
+            src="../assets/images/DSC Logo.png"
+            alt="DSC Logo"
+            style="height: 80px; width: auto"
+          />
         </a>
         <ul class="nav-links">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="index.html">About Us</a></li>
-          <li><a href="../events/index.html">Events</a></li>
+          <li><a href="../about/index.html">About Us</a></li>
+          <li><a href="index.html" class="active">Events</a></li>
           <li><a href="../projects/index.html">Projects</a></li>
           <li><a href="../resources/index.html">Resources</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
-          <li><a href="../join.html" class="btn btn-primary btn-small nav-cta">Join Us</a></li>
+          <li>
+            <a href="../join.html" class="btn btn-primary btn-small nav-cta"
+              >Join Us</a
+            >
+          </li>
         </ul>
         <button class="mobile-menu-btn">☰</button>
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero ngf-hero">
-      <div class="hero-content">
-        <img src="../assets/images/NGF Logo.png" alt="NextGen Fest Logo" class="ngf-logo">
-        <h1 class="ngf-title">NextGen Fest 2026</h1>
-        <p>The Ultimate Data Science Festival - March 15, 2026</p>
-        <a href="../join.html" class="btn btn-primary btn-large">Register Now</a>
-      </div>
-    </section>
+    <main class="ngf-theme-wrapper">
+      <section class="ngf-hero">
+        <div class="ngf-hero-bg-grid"></div>
+        <div
+          class="container text-center"
+          style="position: relative; z-index: 2"
+          data-aos="zoom-in"
+        >
+          <img
+            src="../assets/images/NGF.png"
+            alt="NextGen Fest 2.0"
+            class="ngf-main-logo"
+            onerror="this.style.display='none'"
+          />
 
-    <!-- Event Overview -->
-    <section class="container">
-      <h2 class="section-title">Event Overview</h2>
-      <div class="grid-2" style="gap: 3rem; align-items: center; margin: 2rem 0;" data-aos="fade-up">
-        <div>
-          <h3 style="color: var(--dark); margin-bottom: 1rem;">🎉 NextGen Fest 2026</h3>
-          <p>
-            NextGen Fest is our flagship annual festival celebrating data science innovation,
-            creativity, and community. This year's event promises to be bigger and better than ever!
-          </p>
-          <div style="background: var(--light); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid var(--ngf-red);">
-            <h4 style="color: var(--dark); margin-bottom: 0.5rem;">📅 Event Details</h4>
-            <p style="margin-bottom: 0.5rem;"><strong>Date:</strong> March 15, 2026</p>
-            <p style="margin-bottom: 0.5rem;"><strong>Time:</strong> 9:00 AM - 5:00 PM</p>
-            <p style="margin-bottom: 0;"><strong>Venue:</strong> NIBM Main Auditorium & Conference Halls</p>
+          <p class="ngf-subtitle">The Ultimate E-Sports & Tech Carnival at NIBM</p>
+
+          <div class="ngf-date-badge">
+            <span class="ngf-date-accent">JULY 24</span>
+            <span style="color: rgba(255, 255, 255, 0.3); margin: 0 10px"
+              >//</span
+            >
+            <span class="ngf-date-accent">JULY 28</span>
+          </div>
+
+          <div
+            style="
+              margin-top: 3rem;
+              display: flex;
+              gap: 1.5rem;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a href="#tournaments" class="btn ngf-btn-primary">View Brackets</a>
+            <a href="#register" class="btn ngf-btn-outline">Squad Registration</a>
           </div>
         </div>
-        <div>
-          <div style="background: linear-gradient(135deg, var(--ngf-black) 0%, var(--ngf-red) 100%); padding: 2rem; border-radius: 12px; color: var(--ngf-white); text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
-            <h3 style="color: #fff; margin-bottom: 1rem;">Expected Attendance</h3>
-            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;">1000+</div>
-            <p>Students, professionals, and industry leaders</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Schedule -->
-    <section style="background: var(--light);">
-      <div class="container">
-        <h2 class="section-title">Festival Schedule</h2>
-        <div class="timeline" data-aos="fade-up">
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h4>9:00 AM - 10:00 AM: Opening Ceremony</h4>
-              <p>Welcome speech by DSC leadership and special guest from industry.</p>
+      <section
+        id="tournaments"
+        class="container"
+        style="padding-top: 6rem; padding-bottom: 4rem"
+      >
+        <div class="ngf-section-header" data-aos="fade-up">
+          <h2>THE MAIN ARENA</h2>
+          <p>Compete for glory in our three flagship championship brackets.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="ngf-tourney-card" data-aos="fade-up" data-aos-delay="0">
+            <div
+              class="ngf-card-image"
+              style="
+                background-image: linear-gradient(
+                    to bottom,
+                    transparent,
+                    var(--ngf-black)
+                  ),
+                  url('../assets/images/valorant.jpg');
+              "
+            >
+              <span class="ngf-tag">Team Format (5v5)</span>
+            </div>
+            <div class="ngf-card-content">
+              <h3>VALORANT</h3>
+              <p>
+                Gather your squad, master your agents, and dominate the tactical
+                shooter bracket. Communication and precision are your only
+                lifelines.
+              </p>
+              <a href="#register" class="ngf-link">Register Team →</a>
             </div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h4>10:00 AM - 11:30 AM: Keynote Session 1</h4>
-              <p>Industry expert discusses latest trends in AI and Machine Learning.</p>
+
+          <div
+            class="ngf-tourney-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="ngf-card-image"
+              style="
+                background-image: linear-gradient(
+                    to bottom,
+                    transparent,
+                    var(--ngf-black)
+                  ),
+                  url('../assets/images/pubg.avif');
+              "
+            >
+              <span class="ngf-tag">Squad Format (4v4)</span>
+            </div>
+            <div class="ngf-card-content">
+              <h3>PUBG MOBILE</h3>
+              <p>
+                Drop into the battleground. Scavenge, survive, and outlast the
+                competition to secure that chicken dinner for your team.
+              </p>
+              <a href="#register" class="ngf-link">Register Squad →</a>
             </div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h4>11:45 AM - 1:00 PM: Concurrent Workshops</h4>
-              <p>Choose from multiple hands-on workshops on various data science topics.</p>
+
+          <div
+            class="ngf-tourney-card"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="ngf-card-image"
+              style="
+                background-image: linear-gradient(
+                    to bottom,
+                    transparent,
+                    var(--ngf-black)
+                  ),
+                  url('../assets/images/mk.webp');
+              "
+            >
+              <span class="ngf-tag">Individual (1v1)</span>
             </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h4>1:00 PM - 2:00 PM: Lunch Break</h4>
-              <p>Networking opportunity with industry professionals over lunch.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h4>2:00 PM - 3:30 PM: Keynote Session 2</h4>
-              <p>Research presentation on innovative data science applications.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h4>3:45 PM - 4:45 PM: Project Showcase & Awards</h4>
-              <p>Recognition of outstanding student projects and community achievements.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h4>4:45 PM - 5:00 PM: Closing Remarks</h4>
-              <p>Thank you and announcement of NextGen Fest 2027.</p>
+            <div class="ngf-card-content">
+              <h3>MORTAL KOMBAT</h3>
+              <p>
+                Test your might. Step into the arena solo and chain your
+                deadliest combos to claim the title of Grand Champion.
+              </p>
+              <a href="#register" class="ngf-link">Register Player →</a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Workshops -->
-    <section class="container">
-      <h2 class="section-title">Featured Workshops</h2>
-      <div class="grid-3" style="margin: 2rem 0;" data-aos="fade-up">
-        <div class="card">
-          <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; color: #fff;">
-            <h3 style="margin: 0; color: #fff;">Advanced Python for Data Science</h3>
-          </div>
-          <p style="margin-bottom: 1rem;">
-            Master advanced Python techniques, optimization, and best practices for data science projects.
-          </p>
-          <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;">
-            <strong>Facilitator:</strong> Dr. Rajesh Kumar
-          </p>
-          <a href="#" class="btn btn-small">Register</a>
-        </div>
-
-        <div class="card">
-          <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; color: #fff;">
-            <h3 style="margin: 0; color: #fff;">Deep Learning & Neural Networks</h3>
-          </div>
-          <p style="margin-bottom: 1rem;">
-            Hands-on workshop building neural networks from scratch using TensorFlow and PyTorch.
-          </p>
-          <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;">
-            <strong>Facilitator:</strong> Dr. Lisa Anderson
-          </p>
-          <a href="#" class="btn btn-small">Register</a>
-        </div>
-
-        <div class="card">
-          <div style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; color: #fff;">
-            <h3 style="margin: 0; color: #fff;">Data Visualization Masterclass</h3>
-          </div>
-          <p style="margin-bottom: 1rem;">
-            Create impactful visualizations using Tableau, PowerBI, and Python visualization libraries.
-          </p>
-          <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;">
-            <strong>Facilitator:</strong> Jessica Martinez
-          </p>
-          <a href="#" class="btn btn-small">Register</a>
-        </div>
-
-        <div class="card">
-          <div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; color: #fff;">
-            <h3 style="margin: 0; color: #fff;">NLP & Text Analytics</h3>
-          </div>
-          <p style="margin-bottom: 1rem;">
-            Explore Natural Language Processing techniques including sentiment analysis and classification.
-          </p>
-          <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;">
-            <strong>Facilitator:</strong> Arjun Singh
-          </p>
-          <a href="#" class="btn btn-small">Register</a>
-        </div>
-
-        <div class="card">
-          <div style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; color: #fff;">
-            <h3 style="margin: 0; color: #fff;">Big Data & Cloud Computing</h3>
-          </div>
-          <p style="margin-bottom: 1rem;">
-            Learn to process large-scale data using cloud platforms like AWS, Azure, and Google Cloud.
-          </p>
-          <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;">
-            <strong>Facilitator:</strong> Michael Thompson
-          </p>
-          <a href="#" class="btn btn-small">Register</a>
-        </div>
-
-        <div class="card">
-          <div style="background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; color: #fff;">
-            <h3 style="margin: 0; color: #fff;">Career in Data Science</h3>
-          </div>
-          <p style="margin-bottom: 1rem;">
-            Panel discussion with industry professionals on career paths and opportunities in data science.
-          </p>
-          <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;">
-            <strong>Facilitator:</strong> Career Advisors
-          </p>
-          <a href="#" class="btn btn-small">Register</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Competitions -->
-    <section style="background: var(--light);">
-      <div class="container">
-        <h2 class="section-title">Competitions</h2>
-        <div class="grid-3" style="gap: 2rem; margin-top: 2rem;" data-aos="fade-up">
-          <div class="card">
-            <h3 style="color: var(--dark); margin-bottom: 1rem;">🎮 Mortal Kombat</h3>
-            <p style="margin-bottom: 1rem;">
-              Intense 1v1 battles. Show your skills in a knockout bracket.
+      <section class="ngf-darker-bg" style="padding: 6rem 0">
+        <div class="container">
+          <div class="ngf-section-header" data-aos="fade-up">
+            <h2>THE FESTIVAL GROUNDS</h2>
+            <p>
+              Happening live on Grand Finals Day (July 28). No registration
+              required—just show up and play.
             </p>
-            <div class="badge badge-primary" style="margin-bottom: 1rem;">
-              Individual
-            </div>
-            <a href="#" class="btn btn-primary">Register</a>
           </div>
 
-          <div class="card">
-            <h3 style="color: var(--dark); margin-bottom: 1rem;">🕹️ Valorant</h3>
-            <p style="margin-bottom: 1rem;">
-              Tactical 5v5 team competition. Coordinate, execute, and win.
+          <div class="ngf-bento-grid">
+            <div class="ngf-bento-card bento-large" data-aos="fade-right">
+              <div class="bento-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  fill="none"
+                  stroke="var(--ngf-red)"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M21 16v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"
+                  ></path>
+                  <circle cx="9" cy="14" r="1"></circle>
+                  <circle cx="15" cy="14" r="1"></circle>
+                  <path d="M12 12v-2"></path>
+                  <path d="M8 8l2 2"></path>
+                  <path d="M16 8l-2 2"></path>
+                </svg>
+              </div>
+              <h3>Console Free-Play Lobby</h3>
+              <p>
+                Challenge your friends in casual matches between the main stage
+                events. Featuring <strong>FIFA</strong> tournaments and
+                <strong>Forza Horizon</strong> racing rigs.
+              </p>
+            </div>
+
+            <div
+              class="ngf-bento-card bento-medium"
+              data-aos="fade-left"
+              data-aos-delay="100"
+            >
+              <div class="bento-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  fill="none"
+                  stroke="var(--ngf-red)"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+              </div>
+              <h3>Physical Challenges</h3>
+              <p>
+                Step away from the screen. Test your real-world accuracy with
+                <strong>Darts</strong>, <strong>Ring Toss</strong>, and our
+                custom <strong>Mini Golf</strong> course to win spot prizes.
+              </p>
+            </div>
+
+            <div
+              class="ngf-bento-card bento-small"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="bento-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  fill="none"
+                  stroke="var(--ngf-red)"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 18V5l12-2v13"></path>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+              </div>
+              <h3>Live DJ & Food Stalls</h3>
+              <p>
+                Keep your energy levels maxed out with local food vendors while
+                our live DJ sets the soundtrack for the Grand Finals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="container"
+        style="padding-top: 6rem; padding-bottom: 6rem"
+      >
+        <div class="ngf-section-header" data-aos="fade-up">
+          <h2>ROADMAP TO GLORY</h2>
+        </div>
+
+        <div class="ngf-timeline">
+          <div class="ngf-timeline-item" data-aos="fade-up">
+            <div class="ngf-timeline-date">July 24</div>
+            <div class="ngf-timeline-content">
+              <h3>The Qualifiers</h3>
+              <p>
+                The gauntlet begins. All initial knockout rounds and
+                quarter-finals for Valorant, PUBG, and Mortal Kombat will
+                conclude.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="ngf-timeline-item"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="ngf-timeline-date ngf-highlight">July 28</div>
+            <div class="ngf-timeline-content" style="border-color: var(--ngf-red)">
+              <h3>Grand Finals & Carnival</h3>
+              <p>
+                The surviving teams take the main stage. The lobby opens for
+                FIFA, Forza, carnival games, and food stalls. Champions will be
+                crowned.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="register" class="ngf-darker-bg" style="padding: 6rem 0">
+        <div class="container">
+          <div class="ngf-section-header" data-aos="fade-up">
+            <h2>READY TO COMPETE?</h2>
+            <p>
+              Lock in your team or register solo for the brackets. Limited slots
+              available for each tournament.
             </p>
-            <div class="badge badge-primary" style="margin-bottom: 1rem;">
-              Team
-            </div>
-            <a href="#" class="btn btn-primary">Register</a>
           </div>
-
-          <div class="card">
-            <h3 style="color: var(--dark); margin-bottom: 1rem;">📱 PUBG Mobile</h3>
-            <p style="margin-bottom: 1rem;">
-              Squad-based battle royale. Prove your dominance with your team.
-            </p>
-            <div class="badge badge-primary" style="margin-bottom: 1rem;">
-              Team
-            </div>
-            <a href="#" class="btn btn-primary">Register</a>
+          <div
+            style="
+              display: flex;
+              gap: 1.5rem;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a href="#" class="btn ngf-btn-primary">Register Your Team</a>
+            <a href="#" class="btn ngf-btn-outline">Download Rulebook</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Registration & Call-to-Action -->
-    <section class="container">
-      <h2 class="section-title">NextGen Registration</h2>
-      <p class="section-subtitle">Register your team or individual entry and pay the fee</p>
-      <div style="max-width: 720px; margin: 0 auto;" data-aos="fade-up">
-        <form id="ngf-registration-form" onsubmit="handleNgfRegistration(event)">
-          <div class="form-group">
-            <label for="ngf_game">Competition *</label>
-            <select id="ngf_game" name="ngf_game" required>
-              <option value="">Select competition</option>
-              <option value="mortal-kombat">Mortal Kombat (Individual)</option>
-              <option value="valorant">Valorant (Team)</option>
-              <option value="pubg-mobile">PUBG Mobile (Team)</option>
-            </select>
-          </div>
-
-          <div class="form-group" id="team_name_group" style="display: none;">
-            <label for="team_name">Team Name *</label>
-            <input
-              type="text"
-              id="team_name"
-              name="team_name"
-              placeholder="Enter team name"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="leader_name">Player/Leader Name *</label>
-            <input
-              type="text"
-              id="leader_name"
-              name="leader_name"
-              required
-              placeholder="Enter full name"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="leader_email">Email *</label>
-            <input
-              type="email"
-              id="leader_email"
-              name="leader_email"
-              required
-              placeholder="your.email@nibm.lk"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="leader_phone">Phone *</label>
-            <input
-              type="tel"
-              id="leader_phone"
-              name="leader_phone"
-              required
-              placeholder="Enter mobile number"
-            />
-          </div>
-
-          <div class="form-group" id="team_members_group" style="display: none;">
-            <label for="team_members">Team Members *</label>
-            <textarea
-              id="team_members"
-              name="team_members"
-              placeholder="List team members (Name - Student ID)"
-            ></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="registration_fee">Registration Fee (LKR) *</label>
-            <input
-              type="number"
-              id="registration_fee"
-              name="registration_fee"
-              required
-              min="1"
-              placeholder="Enter fee amount"
-            />
-          </div>
-
-          <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
-            <input type="checkbox" id="ngf_terms" required />
-            <label for="ngf_terms" style="margin: 0;">I confirm details are accurate</label>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
-            Pay & Register
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Registration & Call-to-Action -->
-    <section class="container">
-      <h2 class="section-title">Registration Information</h2>
-      <div class="grid-2" style="gap: 2rem; margin: 2rem 0;" data-aos="fade-up">
-        <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--light); padding: 2rem; border-radius: 12px;">
-          <h3 style="color: var(--light); margin-bottom: 1rem;">General Admission</h3>
-          <div style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Free</div>
-          <p style="margin-bottom: 1.5rem;">
-            DSC members get free admission to the fest. Non-members pay nominal fee at gate.
-          </p>
-          <a href="../join.html" class="btn btn-primary" style="background: var(--light); color: var(--primary); font-weight: 700;">
-            Become Member
-          </a>
-        </div>
-
-        <div style="background: linear-gradient(135deg, var(--ngf-black) 0%, var(--ngf-red) 100%); color: var(--ngf-white); padding: 2rem; border-radius: 12px;">
-          <h3 style="color: #fff; margin-bottom: 1rem;">Early Bird Offer</h3>
-          <div style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">LKR 500</div>
-          <p style="margin-bottom: 1.5rem;">
-            Limited early bird passes available. Includes all workshops and lunch.
-          </p>
-          <button onclick="registerEarlyBird()" class="btn btn-primary" style="background: var(--ngf-white); color: var(--ngf-red); font-weight: 700;">
-            Grab Offer Now
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call-to-Action -->
-    <section style="background: linear-gradient(135deg, var(--ngf-black) 0%, var(--ngf-red) 100%); color: var(--ngf-white); text-align: center;">
-      <div class="container">
-        <h2 style="color: #fff; margin-bottom: 1rem;">Don't Miss NextGen Fest 2026!</h2>
-        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; font-size: 1.1rem;">
-          Register now and be part of the biggest data science celebration
-        </p>
-        <a href="../join.html" class="btn btn-primary btn-large" style="background: var(--ngf-white); color: var(--ngf-red); font-weight: 700;">
-          Register Now
-        </a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-        <footer>
+    <footer>
       <div class="footer-content container">
-        
         <div class="footer-brand">
           <div class="footer-logos">
-            <img src="../assets/images/DSC Logo.png" alt="DSC Logo" class="footer-logo">
+            <img
+              src="../assets/images/DSC Logo.png"
+              alt="DSC Logo"
+              class="footer-logo"
+            />
             <span class="logo-divider"></span>
-            <img src="../assets/images/NIBM Logo.png" alt="NIBM Logo" class="parent-logo">
+            <img
+              src="../assets/images/NIBM Logo.png"
+              alt="NIBM Logo"
+              class="parent-logo"
+            />
           </div>
-          <p>National Innovation Centre - NIBM. Bridging the gap between academic theory and industry-leading practice.</p>
+          <p>
+            National Innovation Centre - NIBM. Bridging the gap between academic
+            theory and industry-leading practice.
+          </p>
         </div>
 
         <div class="footer-contact">
           <h3>Get In Touch</h3>
           <ul class="contact-list">
             <li>
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <svg
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
               <a href="mailto:contact@dsc-nibm.com">contact@dsc-nibm.com</a>
             </li>
             <li>
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <svg
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
               <a href="tel:+94000000000">+94 XX XXX XXXX</a>
             </li>
           </ul>
@@ -416,7 +397,7 @@
           <h3>Quick Links</h3>
           <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="index.html">About Us</a></li>
+            <li><a href="../about/index.html">About Us</a></li>
             <li><a href="../events/index.html">Events</a></li>
             <li><a href="../projects/index.html">Projects</a></li>
             <li><a href="../resources/index.html">Resources</a></li>
@@ -426,86 +407,85 @@
         <div class="footer-social">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61559768335210" target="_blank" aria-label="Facebook">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <a
+              href="https://www.facebook.com/profile.php?id=61559768335210"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
             </a>
-            <a href="https://www.instagram.com/dsclub.nibm/" target="_blank" aria-label="Instagram">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <a
+              href="https://www.instagram.com/dsclub.nibm/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
             </a>
-            <a href="https://www.linkedin.com/company/data-scientists-club-nibm/" target="_blank" aria-label="LinkedIn">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <a
+              href="https://www.linkedin.com/company/data-scientists-club-nibm/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
             </a>
-            <a href="https://www.youtube.com/@NIBM.dsclub" target="_blank" aria-label="YouTube">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <a
+              href="https://www.youtube.com/@NIBM.dsclub"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
             </a>
-            <a href="https://whatsapp.com/channel/0029Vb7EI951iUxi8Dm5YQ2o" target="_blank" aria-label="WhatsApp">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <a
+              href="https://whatsapp.com/channel/0029Vb7EI951iUxi8Dm5YQ2o"
+              target="_blank"
+              aria-label="WhatsApp"
+            >
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                />
+              </svg>
             </a>
-            <a href="https://github.com/DSClubNIBM" target="_blank" aria-label="GitHub">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <a
+              href="https://github.com/DSClubNIBM"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
             </a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Data Science Club - NIBM. All rights reserved | Developed by DSC Tech Team</p>
+        <p>
+          &copy; 2026 Data Science Club - NIBM. All rights reserved | Developed
+          by DSC Tech Team
+        </p>
       </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="../js/main.js?v=14" defer></script>
-    <script src="../js/payment-redirect.js"></script>
-    <script>
-      const ngfGameSelect = document.getElementById("ngf_game");
-      const teamNameGroup = document.getElementById("team_name_group");
-      const teamMembersGroup = document.getElementById("team_members_group");
-
-      function toggleTeamFields() {
-        const isTeamGame = ngfGameSelect.value === "valorant" || ngfGameSelect.value === "pubg-mobile";
-        teamNameGroup.style.display = isTeamGame ? "block" : "none";
-        teamMembersGroup.style.display = isTeamGame ? "block" : "none";
-        document.getElementById("team_name").required = isTeamGame;
-        document.getElementById("team_members").required = isTeamGame;
-      }
-
-      if (ngfGameSelect) {
-        ngfGameSelect.addEventListener("change", toggleTeamFields);
-        toggleTeamFields();
-      }
-
-      function handleNgfRegistration(event) {
-        event.preventDefault();
-
-        const form = document.getElementById("ngf-registration-form");
-        if (!DCSFunctions.validateForm(form)) {
-          DCSFunctions.showNotification("Please fill all required fields correctly", "error");
-          return;
-        }
-
-        const formData = new FormData(form);
-        const paymentData = {
-          name: formData.get("leader_name"),
-          email: formData.get("leader_email"),
-          phone: formData.get("leader_phone"),
-          amount: Number(formData.get("registration_fee")) || 0,
-          type: "event",
-          event: "nextgen-fest-2026",
-          game: formData.get("ngf_game"),
-          teamName: formData.get("team_name"),
-          teamMembers: formData.get("team_members")
-        };
-
-        sessionStorage.setItem("paymentData", JSON.stringify(paymentData));
-        PaymentHandler.processEventPayment(paymentData);
-      }
-
-      function registerEarlyBird() {
-        DCSFunctions.showNotification("Redirecting to registration...", "info");
-        setTimeout(() => {
-          window.location.href = "../join.html";
-        }, 1000);
-      }
-    </script>
+    <script src="../js/main.js?v=16" defer></script>
   </body>
 </html>

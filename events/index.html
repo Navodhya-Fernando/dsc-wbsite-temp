@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Events - Data Science Club</title>
-    <link rel="stylesheet" href="../css/components.css?v=14" />
-    <link rel="stylesheet" href="../css/styles.css?v=14" />
+    <title>Events & Initiatives | Data Science Club - NIBM</title>
+    <link rel="stylesheet" href="../css/components.css?v=16" />
+    <link rel="stylesheet" href="../css/styles.css?v=16" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
@@ -20,8 +20,8 @@
         </a>
         <ul class="nav-links">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="index.html">About Us</a></li>
-          <li><a href="../events/index.html">Events</a></li>
+          <li><a href="../about/index.html">About Us</a></li>
+          <li><a href="index.html" class="active">Events</a></li>
           <li><a href="../projects/index.html">Projects</a></li>
           <li><a href="../resources/index.html">Resources</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
@@ -31,219 +31,208 @@
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Events & Activities</h1>
-        <p>Join us for exciting workshops, competitions, and networking opportunities</p>
-      </div>
-    </section>
-
-    <!-- Event Categories Navigation -->
-    <section class="container">
-      <h2 class="section-title">Browse Events</h2>
-      <div class="grid-4" style="margin: 2rem 0; text-align: center;">
-        <a href="index.html" class="card" style="text-decoration: none;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📅</div>
-          <h3 style="color: #3b82f6;">Upcoming Events</h3>
-        </a>
-        <a href="academic-events.html" class="card" style="text-decoration: none;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎓</div>
-          <h3 style="color: #3b82f6;">Workshops & Seminars</h3>
-        </a>
-        <a href="nextgen-fest.html" class="card" style="text-decoration: none;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎉</div>
-          <h3 style="color: #3b82f6;">NextGen Fest</h3>
-        </a>
-        <a href="past-events.html" class="card" style="text-decoration: none;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📸</div>
-          <h3 style="color: #3b82f6;">Past Events</h3>
-        </a>
-      </div>
-    </section>
-
-    <!-- Upcoming Events -->
-    <section class="container">
-      <h2 class="section-title">Upcoming Events</h2>
-      <div class="grid-3" data-aos="fade-up">
-        <div class="event-card">
-          <div class="event-image" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); background-size: cover; background-position: center;">
-            <img src="../assets/images/placeholder-event-1.jpg" alt="NextGen Fest 2026" style="width: 100%; height: 100%; object-fit: cover; ">
-          </div>
-          <div class="event-content">
-            <span class="event-date">March 15, 2026</span>
-            <h3 class="event-title">NextGen Fest 2026</h3>
-            <p class="event-description">
-              The most awaited annual data science festival featuring keynotes, workshops,
-              competitions, and networking.
-            </p>
-            <div class="event-footer">
-              <span class="event-category">Festival</span>
-              <a href="nextgen-fest.html" class="btn btn-small">Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); background-size: cover; background-position: center;">
-            <img src="../assets/images/placeholder-event-2.jpg" alt="Advanced ML Workshop" style="width: 100%; height: 100%; object-fit: cover; ">
-          </div>
-          <div class="event-content">
-            <span class="event-date">February 25, 2026</span>
-            <h3 class="event-title">Advanced ML Workshop</h3>
-            <p class="event-description">
-              Hands-on workshop on machine learning algorithms, deep learning, and real-world
-              applications.
-            </p>
-            <div class="event-footer">
-              <span class="event-category">Workshop</span>
-              <a href="academic-events.html" class="btn btn-small">Register</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-image" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); background-size: cover; background-position: center;">
-            <img src="../assets/images/placeholder-event-3.jpg" alt="Data Science Hackathon" style="width: 100%; height: 100%; object-fit: cover; ">
-          </div>
-          <div class="event-content">
-            <span class="event-date">March 5, 2026</span>
-            <h3 class="event-title">Data Science Hackathon</h3>
-            <p class="event-description">
-              24-hour hackathon to solve real-world data challenges. Win prizes and gain
-              recognition.
-            </p>
-            <div class="event-footer">
-              <span class="event-category">Competition</span>
-              <a href="academic-events.html" class="btn btn-small">Register</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-image" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); background-size: cover; background-position: center;">
-            <img src="../assets/images/placeholder-event-4.jpg" alt="NLP Deep Dive" style="width: 100%; height: 100%; object-fit: cover; ">
-          </div>
-          <div class="event-content">
-            <span class="event-date">March 20, 2026</span>
-            <h3 class="event-title">NLP Deep Dive</h3>
-            <p class="event-description">
-              Comprehensive workshop on Natural Language Processing, text analysis, and
-              sentiment classification.
-            </p>
-            <div class="event-footer">
-              <span class="event-category">Seminar</span>
-              <a href="academic-events.html" class="btn btn-small">Register</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); background-size: cover; background-position: center;">
-            <img src="../assets/images/placeholder-event-5.jpg" alt="Data Visualization Masterclass" style="width: 100%; height: 100%; object-fit: cover; ">
-          </div>
-          <div class="event-content">
-            <span class="event-date">April 1, 2026</span>
-            <h3 class="event-title">Data Visualization Masterclass</h3>
-            <p class="event-description">
-              Learn to create stunning visualizations using Tableau, PowerBI, and Python
-              libraries.
-            </p>
-            <div class="event-footer">
-              <span class="event-category">Workshop</span>
-              <a href="academic-events.html" class="btn btn-small">Register</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); background-size: cover; background-position: center;">
-            <img src="../assets/images/placeholder-event-6.jpg" alt="Industry Networking Session" style="width: 100%; height: 100%; object-fit: cover; ">
-          </div>
-          <div class="event-content">
-            <span class="event-date">April 10, 2026</span>
-            <h3 class="event-title">Industry Networking Session</h3>
-            <p class="event-description">
-              Connect with professionals from top tech companies. Explore career opportunities
-              and internships.
-            </p>
-            <div class="event-footer">
-              <span class="event-category">Networking</span>
-              <a href="academic-events.html" class="btn btn-small">Register</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Event Types -->
-    <section style="background: #f8fafc;">
-      <div class="container">
-        <h2 class="section-title">Types of Events We Host</h2>
-        <div class="grid-3" data-aos="fade-up">
-          <div class="card">
-            <h3 style="color: #3b82f6; margin-bottom: 1rem;">🎓 Workshops & Seminars</h3>
-            <p>
-              Interactive learning sessions led by experts on various data science topics,
-              tools, and technologies.
-            </p>
-          </div>
-          <div class="card">
-            <h3 style="color: #3b82f6; margin-bottom: 1rem;">🏆 Competitions</h3>
-            <p>
-              Hackathons and contests challenging members to apply their skills and compete
-              for prizes.
-            </p>
-          </div>
-          <div class="card">
-            <h3 style="color: #3b82f6; margin-bottom: 1rem;">🤝 Networking Events</h3>
-            <p>
-              Connect with industry professionals, recruiters, and fellow data science
-              enthusiasts.
-            </p>
-          </div>
-          <div class="card">
-            <h3 style="color: #3b82f6; margin-bottom: 1rem;">📊 Talks & Panels</h3>
-            <p>
-              Guest lectures from renowned experts discussing cutting-edge trends and
-              real-world applications.
-            </p>
-          </div>
-          <div class="card">
-            <h3 style="color: #3b82f6; margin-bottom: 1rem;">🎉 Social Activities</h3>
-            <p>
-              Team building, social gatherings, and community activities to strengthen
-              member bonds.
-            </p>
-          </div>
-          <div class="card">
-            <h3 style="color: #3b82f6; margin-bottom: 1rem;">🎯 NextGen Fest</h3>
-            <p>
-              Our flagship annual festival featuring multiple events, competitions, and
-              workshops.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Subscribe Section -->
-    <section class="container">
-      <h2 class="section-title">Stay Updated</h2>
-      <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-        <p style="margin-bottom: 2rem;">Subscribe to our newsletter to get updates about upcoming events.</p>
-        <form style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            required
-            style="flex: 1; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;"
-          />
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
-        <p style="font-size: 0.9rem; color: #94a3b8;">
-          We respect your privacy. Unsubscribe at any time.
+    <section class="page-hero" style="text-align: center; padding: 7rem 2rem 4rem;">
+      <div class="container" style="position: relative; z-index: 1;" data-aos="zoom-in" data-aos-duration="800">
+        <span class="badge badge-accent mb-4" style="font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;">[ EVT.LOG // CALENDAR ]</span>
+        <h1 class="page-title" style="font-size: 4rem; margin-bottom: 1.5rem;">Discover Our <span class="text-gradient">Events.</span></h1>
+        <p class="page-subtitle" style="margin: 0 auto; max-width: 650px; font-size: 1.15rem; line-height: 1.7;">
+          From late-night hackathons and technical bootcamps to our flagship tech festivals. See what's happening next in the DSC community.
         </p>
+      </div>
+    </section>
+
+    <section class="container" style="position: relative; z-index: 10; display: flex; justify-content: center; transform: translateY(-50%); margin-bottom: -3rem;">
+      <div class="event-action-bar" data-aos="zoom-in" data-aos-delay="100">
+        
+        <a href="nextgen-fest.html" class="action-item">
+          <div class="action-icon nextgen-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </div>
+          <div class="action-text">
+            <h3>NextGen Fest</h3>
+            <p>E-Sports & Tech</p>
+          </div>
+        </a>
+
+        <div class="action-divider"></div>
+
+        <a href="academic-events.html" class="action-item">
+          <div class="action-icon academic-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </div>
+          <div class="action-text">
+            <h3>Academic Hub</h3>
+            <p>Workshops</p>
+          </div>
+        </a>
+
+        <div class="action-divider"></div>
+
+        <a href="past-events.html" class="action-item">
+          <div class="action-icon archive-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="action-text">
+            <h3>Event Archive</h3>
+            <p>Past Milestones</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+      <div class="featured-event" data-aos="fade-up">
+        <div class="featured-visual">
+          <img src="../assets/images/event-agm.jpg" alt="AGM spotlight" class="featured-image" />
+          <div class="featured-overlay"></div>
+          <span class="featured-date">March 15, 2026</span>
+        </div>
+        <div class="featured-content">
+          <span class="badge badge-warning" style="margin-bottom: 1rem;">Spotlight Event</span>
+          <h2>Annual General Meeting (AGM) & Official Launch</h2>
+          <p>
+            Be part of the defining moment for the Data Scientists' Club. Join us as we unveil our 2026 executive board, launch our official digital platform, and outline the strategic roadmap for the upcoming academic year.
+          </p>
+          <div class="event-meta">
+            <span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Main Auditorium, NIC</span>
+            <span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 09:00 AM - 12:30 PM</span>
+          </div>
+          <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+            <a href="#" class="btn btn-primary">RSVP Now</a>
+            <a href="#" class="btn btn-secondary">Add to Calendar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background-color: var(--light); padding-top: 5rem; padding-bottom: 5rem;">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+          <h2 class="section-title" style="margin: 0;">Upcoming Initiatives</h2>
+          <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none;">View Full Calendar →</a>
+        </div>
+        
+        <div class="grid-3">
+          <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="event-image" style="background: linear-gradient(135deg, var(--darker) 0%, var(--primary-dark) 100%); display: flex; align-items: center; justify-content: center;">
+              <img src="../assets/images/event-nextgen.jpg" alt="NextGen Fest 2026" class="event-image-file" />
+              <h3 style="color: rgba(255,255,255,0.2); font-size: 2rem; font-family: 'Share Tech Mono', monospace;">NEXTGEN.FEST</h3>
+            </div>
+            <div class="event-content">
+              <span class="event-tag">Flagship Festival</span>
+              <h3 class="event-title" style="font-size: 1.3rem;">NextGen Fest 2026</h3>
+              <p class="event-description">Prepare for our premier technology and data festival featuring hackathons, networking, and expert showcases.</p>
+              <div class="event-footer" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--lighter);">
+                <span style="font-weight: 600; color: var(--dark); font-size: 0.9rem;">TBA (August)</span>
+                <a href="nextgen-fest.html" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem;">Details →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="event-image" style="background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%); display: flex; align-items: center; justify-content: center;">
+              <img src="../assets/images/event-tshirt.jpg" alt="DSC T-Shirt Design Competition" class="event-image-file" />
+              <svg width="60" height="60" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a8.96 8.96 0 0 0-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path></svg>
+            </div>
+            <div class="event-content">
+              <span class="event-tag" style="background: rgba(232, 19, 19, 0.1); color: var(--ngf-red);">Ending Soon</span>
+              <h3 class="event-title" style="font-size: 1.3rem;">DSC T-Shirt Design Comp</h3>
+              <p class="event-description">Leave your mark on the club's visual identity! Submit your creative concepts to support our fundraising efforts.</p>
+              <div class="event-footer" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--lighter);">
+                <span style="font-weight: 600; color: var(--ngf-red); font-size: 0.9rem;">Due Feb 22</span>
+                <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem;">Submit Design →</a>
+              </div>
+            </div>
+          </div>
+
+           <div class="event-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="event-image" style="background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%); display: flex; align-items: center; justify-content: center;">
+              <img src="../assets/images/event-iftaar.jpg" alt="Community Iftaar" class="event-image-file" />
+              <svg width="60" height="60" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </div>
+            <div class="event-content">
+              <span class="event-tag">Culture & Community</span>
+              <h3 class="event-title" style="font-size: 1.3rem;">Community Iftaar</h3>
+              <p class="event-description">Join us for an evening of fellowship, reflection, and great food as we celebrate the diversity of our student community.</p>
+              <div class="event-footer" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--lighter);">
+                <span style="font-weight: 600; color: var(--dark); font-size: 0.9rem;">Ramadan 2026</span>
+                <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem;">Register →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="event-image" style="background: linear-gradient(135deg, #059669 0%, #064e3b 100%); display: flex; align-items: center; justify-content: center;">
+              <img src="../assets/images/event-ml.jpg" alt="Intro to Machine Learning" class="event-image-file" />
+              <svg width="60" height="60" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <div class="event-content">
+              <span class="event-tag" style="background: rgba(5, 150, 105, 0.1); color: #059669;">Technical Bootcamp</span>
+              <h3 class="event-title" style="font-size: 1.3rem;">Intro to Machine Learning</h3>
+              <p class="event-description">A beginner-friendly hands-on session covering the basics of Python, Pandas, and building your first predictive model.</p>
+              <div class="event-footer" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--lighter);">
+                <span style="font-weight: 600; color: var(--dark); font-size: 0.9rem;">April 10, 2026</span>
+                <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem;">Register →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: 5rem; padding-bottom: 5rem;">
+      <h2 class="section-title">Past Event Archive</h2>
+      
+      <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;" data-aos="fade-up">
+        
+        <div class="archive-row">
+          <div class="archive-date">Dec 2025</div>
+          <div class="archive-details">
+            <h4>Data Visualization with Power BI</h4>
+            <p>Hands-on workshop focusing on transforming raw datasets into interactive business dashboards.</p>
+          </div>
+          <div class="archive-action">
+            <a href="#" class="btn btn-secondary btn-small">View Recap</a>
+          </div>
+        </div>
+
+        <div class="archive-row">
+          <div class="archive-date">Nov 2025</div>
+          <div class="archive-details">
+            <h4>GitHub Game Off 2025: DSC Team Sync</h4>
+            <p>Collaborative coding session where our club members teamed up to build open-source games.</p>
+          </div>
+          <div class="archive-action">
+            <a href="#" class="btn btn-secondary btn-small">View Repo</a>
+          </div>
+        </div>
+
+        <div class="archive-row">
+          <div class="archive-date">Oct 2025</div>
+          <div class="archive-details">
+            <h4>Hacktoberfest Contribution Drive</h4>
+            <p>A month-long initiative helping members make their first successful pull requests to open-source repositories.</p>
+          </div>
+          <div class="archive-action">
+            <a href="#" class="btn btn-secondary btn-small">View Recap</a>
+          </div>
+        </div>
+
+      </div>
+      
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="past-events.html" class="btn btn-secondary">Load More History</a>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card" data-aos="fade-up">
+          <h2>Never Miss an Event</h2>
+          <p>Join the official Data Scientists' Club today to get priority registration, exclusive resources, and invites to closed-door workshops.</p>
+          <a href="../join.html" class="btn btn-accent btn-large">Become a Member</a>
+        </div>
       </div>
     </section>
 
@@ -316,6 +305,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="../js/main.js?v=14" defer></script>
+    <script src="../js/main.js?v=16" defer></script>
   </body>
 </html>
