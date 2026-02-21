@@ -545,9 +545,46 @@ function setLoadingState(isLoading) {
   }
 }
 
+/* ========================================
+   ANIMATED NUMBER COUNTER (For Achievements Page)
+   ======================================== */
+
+function animateMetricNumbers() {
+  const metricNumbers = document.querySelectorAll('.metric-number');
+  
+  if (metricNumbers.length === 0) return;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+        entry.target.classList.add('counted');
+        const target = parseInt(entry.target.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+        
+        const updateNumber = () => {
+          current += increment;
+          if (current < target) {
+            entry.target.textContent = Math.floor(current).toLocaleString();
+            requestAnimationFrame(updateNumber);
+          } else {
+            entry.target.textContent = target.toLocaleString();
+          }
+        };
+        
+        updateNumber();
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  metricNumbers.forEach(num => observer.observe(num));
+}
+
 // Initialize on page load
 window.addEventListener("load", function () {
   observeElements();
+  animateMetricNumbers();
 });
 
 // Export functions for use in other scripts

@@ -1071,7 +1071,8 @@ section {
   z-index: 1;
 }
 
-.board-img-wrapper svg {
+/* Use direct child selector '>' so it doesn't hide the social icons */
+.board-img-wrapper > svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -1082,16 +1083,16 @@ section {
 }
 
 /* Hide SVG by default when image is present */
-.board-img-wrapper img[src] {
+.board-img-wrapper > img[src] {
   background: transparent;
 }
 
-.board-img-wrapper img[src] ~ svg {
+.board-img-wrapper > img[src] ~ svg {
   display: none !important;
 }
 
-/* Show SVG ONLY when image fails to load (display: none via onerror) */
-.board-img-wrapper img[style*="display: none"] ~ svg {
+/* Show SVG ONLY when image fails to load */
+.board-img-wrapper > img[style*="display: none"] ~ svg {
   display: block !important;
 }
 
@@ -1112,6 +1113,7 @@ section {
   justify-content: center;
   gap: 1.5rem;
   transition: bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 10;
 }
 
 .board-card:hover .board-socials {
@@ -1126,16 +1128,32 @@ section {
   height: 40px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
-  color: var(--white);
+  color: #ffffff !important;
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
+.board-socials a svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff !important;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.board-socials a svg path {
+  fill: #ffffff !important;
+}
+
 .board-socials a:hover {
   background: var(--primary);
   transform: scale(1.1);
+}
+
+.board-socials a:hover svg {
+  fill: var(--white);
 }
 
 .board-info {
@@ -1162,6 +1180,439 @@ section {
   line-height: 1.4;
 }
 
+/* ========================================
+   ACHIEVEMENTS PAGE PREMIUM STYLES
+   ======================================== */
+
+/* Metric Cards (Live Impact Metrics) */
+.metric-card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.metric-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-bottom-color: var(--accent);
+}
+
+.metric-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.metric-plus {
+  font-size: 2rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  font-size: 1rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* Timeline (Evolution Timeline) */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Central vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, transparent 0%, var(--accent) 10%, var(--accent) 90%, transparent 100%);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+/* Alternating left and right */
+.timeline-left {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.timeline-right {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-year {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 1px;
+}
+
+.timeline-title {
+  font-size: 1.25rem;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.timeline-desc {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Timeline Node (Circular indicator on center line) */
+.timeline-node {
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border: 4px solid #f8fafc;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.timeline-item:hover .timeline-node {
+  background: var(--primary);
+  box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.3);
+  transform: translateX(-50%) scale(1.3);
+}
+
+/* Trophy Cards (Hall of Fame) */
+.trophy-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.trophy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b 0%, var(--accent) 50%, #f59e0b 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.trophy-card:hover::before {
+  opacity: 1;
+}
+
+.trophy-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
+}
+
+.trophy-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.trophy-card:hover .trophy-icon {
+  background: rgba(99, 102, 241, 0.2);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.trophy-title {
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.trophy-subtitle {
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.trophy-desc {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Alumni Cards (Where Are They Now?) */
+.alumni-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.alumni-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-left-color: var(--accent);
+}
+
+.alumni-avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.alumni-info {
+  flex: 1;
+}
+
+.alumni-name {
+  font-size: 1.25rem;
+  color: var(--dark);
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.alumni-role {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.alumni-quote {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-style: italic;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+/* ========================================
+   TELEMETRY DASHBOARD TIMELINE
+   ======================================== */
+.milestone-dashboard {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--lighter);
+  box-shadow: 0 15px 35px rgba(12, 35, 117, 0.05);
+  overflow: hidden;
+}
+
+/* X-Axis Track */
+.dashboard-axis {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 3rem 4rem 2rem;
+  background: var(--light);
+  border-bottom: 1px solid var(--lighter);
+}
+
+/* The Connecting Line */
+.dashboard-axis::before {
+  content: '';
+  position: absolute;
+  top: 3.5rem; /* Aligns with the dots */
+  left: 4rem;
+  right: 4rem;
+  height: 2px;
+  background: var(--lighter);
+  z-index: 0;
+}
+
+/* Interactive Nodes */
+.axis-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.node-point {
+  width: 18px;
+  height: 18px;
+  background: var(--white);
+  border: 3px solid var(--gray);
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.node-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--gray);
+  transition: color 0.3s ease;
+}
+
+/* Node Hover & Active States */
+.axis-node:hover .node-point {
+  border-color: var(--primary);
+  transform: scale(1.2);
+}
+
+.axis-node.active .node-point {
+  border-color: var(--primary);
+  background: var(--primary);
+  box-shadow: 0 0 15px rgba(77, 165, 176, 0.6);
+  transform: scale(1.4);
+}
+
+.axis-node.active .node-label {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Data Viewer Panel */
+.dashboard-viewer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem;
+  gap: 4rem;
+  background: linear-gradient(to right, var(--white) 60%, var(--light) 100%);
+  min-height: 350px;
+}
+
+.viewer-content {
+  flex: 1;
+  animation: dataFadeIn 0.5s ease-out forwards;
+}
+
+.viewer-badge {
+  display: inline-block;
+  background: rgba(77, 165, 176, 0.15);
+  color: var(--primary);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.viewer-content h3 {
+  font-size: 2.2rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.viewer-content p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* Abstract Graphic */
+.viewer-graphic {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(12, 35, 117, 0.08);
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(77, 165, 176, 0.3);
+  animation: scanPulse 3s infinite linear;
+}
+
+@keyframes dataFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scanPulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-links {
@@ -1180,5 +1631,71 @@ section {
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
+  }
+
+  /* Timeline Mobile Adjustments */
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    padding-left: 50px;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+
+  .timeline-node {
+    left: 20px;
+  }
+
+  .timeline-left .timeline-node,
+  .timeline-right .timeline-node {
+    left: 20px;
+    transform: translateX(0);
+  }
+
+  /* Alumni Card Mobile */
+  .alumni-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .alumni-quote {
+    border-left: none;
+    border-top: 3px solid var(--accent);
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+
+  /* Metric Cards Mobile */
+  .metric-number {
+    font-size: 2.5rem;
+  }
+
+  /* Dashboard Mobile Responsiveness */
+  .dashboard-axis {
+    padding: 2rem 1.5rem 1.5rem;
+    overflow-x: auto; /* Allows swiping through years */
+    scroll-behavior: smooth;
+  }
+  .dashboard-axis::before {
+    left: 1.5rem; right: 1.5rem; top: 2.5rem;
+  }
+  .axis-node {
+    min-width: 80px; /* Prevents squishing */
+  }
+  .dashboard-viewer {
+    flex-direction: column-reverse;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    gap: 2rem;
+  }
+  .viewer-content h3 {
+    font-size: 1.8rem;
   }
 }
