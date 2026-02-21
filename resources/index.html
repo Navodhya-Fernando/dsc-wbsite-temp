@@ -3,27 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resources - Data Science Club</title>
-    <link rel="stylesheet" href="../css/components.css?v=14" />
-    <link rel="stylesheet" href="../css/styles.css?v=14" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-    />
+    <title>Resource Hub | Data Science Club - NIBM</title>
+    <link rel="stylesheet" href="../css/components.css?v=22" />
+    <link rel="stylesheet" href="../css/styles.css?v=22" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   </head>
   <body>
-    <!-- Header & Navigation -->
-        <header>
+    
+    <header>
       <nav class="container">
         <a href="../index.html" class="logo">
           <img src="../assets/images/DSC Logo.png" alt="DSC Logo" style="height: 80px; width: auto" />
         </a>
         <ul class="nav-links">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="index.html">About Us</a></li>
+          <li><a href="../about/index.html">About Us</a></li>
           <li><a href="../events/index.html">Events</a></li>
           <li><a href="../projects/index.html">Projects</a></li>
-          <li><a href="../resources/index.html">Resources</a></li>
+          <li><a href="index.html" class="active">Resources</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
           <li><a href="../join.html" class="btn btn-primary btn-small nav-cta">Join Us</a></li>
         </ul>
@@ -31,174 +28,172 @@
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Learning Resources</h1>
-        <p>Curated content to accelerate your data science journey</p>
+    <section class="page-hero" style="text-align: center; padding: 7rem 2rem 8rem;">
+      <div class="container" style="position: relative; z-index: 1;" data-aos="zoom-in" data-aos-duration="800">
+        <span class="badge badge-accent mb-4" style="font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;">[ LIB.LOG // DIRECTORY ]</span>
+        <h1 class="page-title" style="font-size: 4rem; margin-bottom: 1.5rem;">Knowledge <span class="text-gradient">Base.</span></h1>
+        <p class="page-subtitle" style="margin: 0 auto; max-width: 650px; font-size: 1.15rem; line-height: 1.7;">
+          Your ultimate digital library. Access curated tutorials, past examination papers, technical articles, and self-assessment quizzes designed to elevate your data science skills.
+        </p>
       </div>
     </section>
 
-    <!-- Resource Categories -->
-    <section class="container">
-      <h2 class="section-title">Resource Library</h2>
-      <div class="grid-4" style="margin: 2rem 0;">
-        <a href="tutorials.html" class="card" style="text-decoration: none; text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📚</div>
-          <h3 style="color: #3b82f6;">Tutorials</h3>
-          <p style="font-size: 0.9rem;">Step-by-step guides</p>
-        </a>
-        <a href="articles.html" class="card" style="text-decoration: none; text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📖</div>
-          <h3 style="color: #3b82f6;">Articles</h3>
-          <p style="font-size: 0.9rem;">In-depth analysis</p>
-        </a>
-        <a href="quizzes.html" class="card" style="text-decoration: none; text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧪</div>
-          <h3 style="color: #3b82f6;">Quizzes</h3>
-          <p style="font-size: 0.9rem;">Test your knowledge</p>
-        </a>
-        <a href="model-papers.html" class="card" style="text-decoration: none; text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📝</div>
-          <h3 style="color: #3b82f6;">Model Papers</h3>
-          <p style="font-size: 0.9rem;">Practice papers</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- Featured Resources -->
-    <section style="background: #f8fafc;">
+    <section style="margin-top: -6rem; position: relative; z-index: 10; padding-bottom: 4rem;">
       <div class="container">
-        <h2 class="section-title">Featured Resources</h2>
-        <div class="grid-2" style="gap: 2rem; margin-top: 2rem;" data-aos="fade-up">
-          <div class="card">
-            <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; color: #fff;">
-              <h3 style="margin: 0; color: #fff;">Python for Data Science</h3>
+        <div class="grid-4">
+          
+          <a href="tutorials.html" style="text-decoration: none; color: inherit;">
+            <div class="hub-card" data-aos="fade-up" data-aos-delay="0" style="padding: 2.5rem 1.5rem;">
+              <div class="hub-icon">
+                <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <h3 style="font-size: 1.25rem;">Tutorials</h3>
+              <p style="font-size: 0.9rem;">Video guides and code-along notebooks.</p>
             </div>
-            <p style="margin-bottom: 1rem;">
-              Complete guide to Python programming with focus on data science libraries like
-              Pandas, NumPy, and Matplotlib.
-            </p>
-            <a href="tutorials.html" class="btn btn-small">Explore</a>
-          </div>
+          </a>
 
-          <div class="card">
-            <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; color: #fff;">
-              <h3 style="margin: 0; color: #fff;">Machine Learning Fundamentals</h3>
+          <a href="model-papers.html" style="text-decoration: none; color: inherit;">
+            <div class="hub-card" data-aos="fade-up" data-aos-delay="100" style="padding: 2.5rem 1.5rem;">
+              <div class="hub-icon">
+                <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <h3 style="font-size: 1.25rem;">Model Papers</h3>
+              <p style="font-size: 0.9rem;">Past exams and structured practice questions.</p>
             </div>
-            <p style="margin-bottom: 1rem;">
-              Introduction to core ML concepts, algorithms, and best practices with practical
-              examples and case studies.
-            </p>
-            <a href="articles.html" class="btn btn-small">Explore</a>
-          </div>
+          </a>
 
-          <div class="card">
-            <div style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; color: #fff;">
-              <h3 style="margin: 0; color: #fff;">Data Visualization Techniques</h3>
+          <a href="quizzes.html" style="text-decoration: none; color: inherit;">
+            <div class="hub-card" data-aos="fade-up" data-aos-delay="200" style="padding: 2.5rem 1.5rem;">
+              <div class="hub-icon">
+                <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <h3 style="font-size: 1.25rem;">Live Quizzes</h3>
+              <p style="font-size: 0.9rem;">Test your knowledge with auto-graded MCQs.</p>
             </div>
-            <p style="margin-bottom: 1rem;">
-              Learn to create compelling visualizations using Tableau, PowerBI, and Python
-              visualization libraries.
-            </p>
-            <a href="tutorials.html" class="btn btn-small">Explore</a>
-          </div>
+          </a>
 
-          <div class="card">
-            <div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; color: #fff;">
-              <h3 style="margin: 0; color: #fff;">SQL for Data Analysis</h3>
+          <a href="articles.html" style="text-decoration: none; color: inherit;">
+            <div class="hub-card" data-aos="fade-up" data-aos-delay="300" style="padding: 2.5rem 1.5rem;">
+              <div class="hub-icon">
+                <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              </div>
+              <h3 style="font-size: 1.25rem;">Tech Articles</h3>
+              <p style="font-size: 0.9rem;">Blog posts, insights, and industry trends.</p>
             </div>
-            <p style="margin-bottom: 1rem;">
-              Master SQL queries, database design, and optimization techniques for efficient
-              data retrieval and analysis.
-            </p>
-            <a href="articles.html" class="btn btn-small">Explore</a>
+          </a>
+
+        </div>
+      </div>
+    </section>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
+      <h2 class="section-title" style="text-align: center; margin-top: 0;">Resource Spotlight</h2>
+      <div class="featured-event" data-aos="fade-up" style="min-height: 350px;">
+        <div class="featured-visual" style="background-image: url('../assets/images/resource-pandas.jpg');">
+          <div class="featured-overlay" style="background: linear-gradient(135deg, rgba(35, 77, 159, 0.8) 0%, rgba(12, 35, 117, 0.9) 100%);"></div>
+          <span class="featured-date" style="font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; letter-spacing: 1px; color: var(--accent);">RECOMMENDED</span>
+        </div>
+        <div class="featured-content">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <span class="badge badge-primary">Video Tutorial</span>
+            <span class="badge badge-success">Beginner Friendly</span>
+          </div>
+          <h2>The Complete Pandas Masterclass</h2>
+          <p>
+            Struggling with data manipulation? Watch our comprehensive 2-hour video tutorial session covering everything from basic DataFrames to advanced grouping and merging techniques. Project files and datasets are included in the repository.
+          </p>
+          <div class="event-meta" style="margin-top: 1rem;">
+            <span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 120 Minutes</span>
+            <span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> 2 Datasets Attached</span>
+          </div>
+          <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+            <a href="#" class="btn btn-primary">Watch Tutorial</a>
+            <a href="#" class="btn btn-secondary">Download Assets</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Learning Paths -->
-    <section class="container">
-      <h2 class="section-title">Recommended Learning Paths</h2>
-      <div class="grid-2" style="gap: 2rem; margin-top: 2rem;" data-aos="fade-up">
-        <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #3b82f6;">
-          <h3 style="color: #1e293b; margin-bottom: 1rem;">🚀 Beginner Path</h3>
-          <ol style="padding-left: 1.5rem; color: #64748b;">
-            <li style="margin-bottom: 0.5rem;">Python Basics</li>
-            <li style="margin-bottom: 0.5rem;">Data Manipulation with Pandas</li>
-            <li style="margin-bottom: 0.5rem;">Data Visualization</li>
-            <li style="margin-bottom: 0.5rem;">SQL Fundamentals</li>
-            <li style="margin-bottom: 0.5rem;">Statistics Essentials</li>
-          </ol>
-          <a href="tutorials.html" class="btn btn-small" style="margin-top: 1rem;">Start Learning</a>
-        </div>
-
-        <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #f59e0b;">
-          <h3 style="color: #1e293b; margin-bottom: 1rem;">📊 Intermediate Path</h3>
-          <ol style="padding-left: 1.5rem; color: #64748b;">
-            <li style="margin-bottom: 0.5rem;">Machine Learning Algorithms</li>
-            <li style="margin-bottom: 0.5rem;">Model Evaluation & Tuning</li>
-            <li style="margin-bottom: 0.5rem;">Feature Engineering</li>
-            <li style="margin-bottom: 0.5rem;">Real-world Projects</li>
-            <li style="margin-bottom: 0.5rem;">Data Analysis Case Studies</li>
-          </ol>
-          <a href="articles.html" class="btn btn-small" style="margin-top: 1rem;">Advance Your Skills</a>
-        </div>
-
-        <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #22c55e;">
-          <h3 style="color: #1e293b; margin-bottom: 1rem;">🎯 Advanced Path</h3>
-          <ol style="padding-left: 1.5rem; color: #64748b;">
-            <li style="margin-bottom: 0.5rem;">Deep Learning & NLP</li>
-            <li style="margin-bottom: 0.5rem;">Advanced Feature Engineering</li>
-            <li style="margin-bottom: 0.5rem;">Production ML Systems</li>
-            <li style="margin-bottom: 0.5rem;">Research Paper Reading</li>
-            <li style="margin-bottom: 0.5rem;">Contributing to Open Source</li>
-          </ol>
-          <a href="../projects/index.html" class="btn btn-small" style="margin-top: 1rem;">Explore Advanced Topics</a>
-        </div>
-
-        <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #ef4444;">
-          <h3 style="color: #1e293b; margin-bottom: 1rem;">💼 Professional Path</h3>
-          <ol style="padding-left: 1.5rem; color: #64748b;">
-            <li style="margin-bottom: 0.5rem;">Portfolio Projects</li>
-            <li style="margin-bottom: 0.5rem;">Interview Preparation</li>
-            <li style="margin-bottom: 0.5rem;">Industry Tools & Frameworks</li>
-            <li style="margin-bottom: 0.5rem;">Networking & Mentorship</li>
-            <li style="margin-bottom: 0.5rem;">Job Search Strategies</li>
-          </ol>
-          <a href="../join.html" class="btn btn-small" style="margin-top: 1rem;">Get Professional Support</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Statistics -->
-    <section style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #fff;">
+    <section style="background-color: var(--light); padding-top: 5rem; padding-bottom: 6rem;">
       <div class="container">
-        <h2 class="section-title" style="color: #fff;">Resource Statistics</h2>
-        <div class="stats">
-          <div class="stat" data-aos="fade-up">
-            <div class="stat-number">100+</div>
-            <div class="stat-label">Tutorials</div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+          <h2 class="section-title" style="margin: 0;">Recently Added</h2>
+          <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none;">Browse Full Library →</a>
+        </div>
+        
+        <div class="grid-3">
+          
+          <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="project-image" style="background-image: url('../assets/images/resource-paper.jpg'); position: relative;">
+               <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(77, 165, 176, 0.7) 0%, rgba(35, 77, 159, 0.9) 100%); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <svg width="60" height="60" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag">Model Paper</span>
+                <span class="project-tag">Statistics</span>
+              </div>
+              <h3 class="project-title">Probability & Statistics Mock Exam</h3>
+              <p class="project-description">A complete past-paper mock examination formatted for Year 2 HND students, including a detailed marking scheme.</p>
+              <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; margin-top: auto;">Download PDF →</a>
+            </div>
           </div>
-          <div class="stat" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-number">50+</div>
-            <div class="stat-label">Articles</div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image" style="background-image: url('../assets/images/resource-quiz.jpg'); position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(234, 179, 8, 0.7) 0%, rgba(202, 138, 4, 0.9) 100%); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <svg width="60" height="60" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(202, 138, 4, 0.1); color: #ca8a04;">Interactive Quiz</span>
+                <span class="project-tag">Python</span>
+              </div>
+              <h3 class="project-title">Python Syntax Quick-Fire</h3>
+              <p class="project-description">Test your knowledge on Python loops, conditionals, and data structures. Instant feedback provided at the end of the 20-question quiz.</p>
+              <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; margin-top: auto;">Start Quiz →</a>
+            </div>
           </div>
-          <div class="stat" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-number">30+</div>
-            <div class="stat-label">Quizzes</div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image" style="background-image: url('../assets/images/resource-article.jpg'); position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(147, 51, 234, 0.7) 0%, rgba(88, 28, 135, 0.9) 100%); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <svg width="60" height="60" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(147, 51, 234, 0.1); color: #9333ea;">Blog Article</span>
+                <span class="project-tag">GenAI</span>
+              </div>
+              <h3 class="project-title">The Future of RAG Architectures</h3>
+              <p class="project-description">An in-depth article by our Tech Lead exploring how Retrieval-Augmented Generation is transforming how large language models fetch data.</p>
+              <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; margin-top: auto;">Read Article →</a>
+            </div>
           </div>
-          <div class="stat" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-number">10K+</div>
-            <div class="stat-label">Learners</div>
-          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-        <footer>
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card" data-aos="fade-up">
+          <h2>Unlock Premium Resources</h2>
+          <p>Some data sets, lecture recordings, and mock exams are restricted to registered club members. Join DSC to get full access to the library.</p>
+          <a href="../join.html" class="btn btn-accent btn-large">Join the Club</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
       <div class="footer-content container">
         
         <div class="footer-brand">
@@ -228,7 +223,7 @@
           <h3>Quick Links</h3>
           <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="index.html">About Us</a></li>
+            <li><a href="../about/index.html">About Us</a></li>
             <li><a href="../events/index.html">Events</a></li>
             <li><a href="../projects/index.html">Projects</a></li>
             <li><a href="../resources/index.html">Resources</a></li>
@@ -266,6 +261,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="../js/main.js?v=14" defer></script>
+    <script src="../js/main.js?v=22" defer></script>
   </body>
 </html>

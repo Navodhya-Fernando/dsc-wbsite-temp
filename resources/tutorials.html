@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Tutorials - Data Science Club</title>
-		<link rel="stylesheet" href="../css/components.css?v=14" />
-		<link rel="stylesheet" href="../css/styles.css?v=14" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-		/>
-	</head>
-	<body>
-		    <header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Tutorials | Data Science Club - NIBM</title>
+    <link rel="stylesheet" href="../css/components.css?v=25">
+    <link rel="stylesheet" href="../css/styles.css?v=23" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <style>
+      /* Tiny inline hover effect specifically for the video play buttons */
+      .vid-card:hover .play-btn { transform: scale(1.1); background: var(--primary) !important; }
+      .vid-card:hover .play-btn svg { fill: var(--white) !important; }
+      .play-btn { transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    </style>
+  </head>
+  <body>
+    
+    <header>
       <nav class="container">
         <a href="../index.html" class="logo">
           <img src="../assets/images/DSC Logo.png" alt="DSC Logo" style="height: 80px; width: auto" />
         </a>
         <ul class="nav-links">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="index.html">About Us</a></li>
+          <li><a href="../about/index.html">About Us</a></li>
           <li><a href="../events/index.html">Events</a></li>
           <li><a href="../projects/index.html">Projects</a></li>
-          <li><a href="../resources/index.html">Resources</a></li>
+          <li><a href="index.html" class="active">Resources</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
           <li><a href="../join.html" class="btn btn-primary btn-small nav-cta">Join Us</a></li>
         </ul>
@@ -30,48 +34,221 @@
       </nav>
     </header>
 
-		<section class="hero">
-			<div class="hero-content">
-				<h1>Tutorials</h1>
-				<p>Step-by-step guides for data science fundamentals and tools.</p>
-			</div>
-		</section>
+    <section class="page-hero" style="text-align: center; padding: 7rem 2rem 5rem;">
+      <div class="container" style="position: relative; z-index: 1;" data-aos="zoom-in" data-aos-duration="800">
+        <span class="badge badge-accent mb-4" style="font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;">[ LIB.LOG // TUTORIALS ]</span>
+        <h1 class="page-title" style="font-size: 4rem; margin-bottom: 1.5rem;">Video <span class="text-gradient">Tutorials.</span></h1>
+        <p class="page-subtitle" style="margin: 0 auto; max-width: 650px; font-size: 1.15rem; line-height: 1.7;">
+          Master data science concepts at your own pace. Watch step-by-step video guides and code along with our expert student instructors.
+        </p>
+      </div>
+    </section>
 
-		<section class="container">
-			<h2 class="section-title">Featured Tutorials</h2>
-			<div class="grid-3" style="margin-top: 2rem;" data-aos="fade-up">
-				<div class="card">
-					<h3 class="card-title">Getting Started with Python</h3>
-					<p class="card-text">Variables, functions, and data structures for analytics.</p>
-				</div>
-				<div class="card">
-					<h3 class="card-title">Pandas for Data Cleaning</h3>
-					<p class="card-text">Handling missing values, reshaping, and transformations.</p>
-				</div>
-				<div class="card">
-					<h3 class="card-title">Intro to Machine Learning</h3>
-					<p class="card-text">Training your first classification model.</p>
-				</div>
-			</div>
-		</section>
+    <section style="position: relative; z-index: 10; padding-bottom: 2rem;">
+      <div class="container">
+        <div style="margin-top: -35px;">
+          
+          <div class="search-filter-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <div class="search-box">
+              <svg width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" placeholder="Search tutorials, tools, or topics..." class="search-input">
+            </div>
+            
+            <div class="filter-divider"></div>
+            
+            <div class="filter-box">
+              <svg width="18" height="18" fill="none" stroke="var(--gray)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+              <select class="filter-select">
+                <option value="all">All Categories</option>
+                <option value="python">Python</option>
+                <option value="ml">Machine Learning</option>
+                <option value="data-viz">Data Visualization</option>
+                <option value="sql">SQL & Databases</option>
+              </select>
+              <svg width="16" height="16" fill="none" stroke="var(--gray)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="custom-arrow"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
 
-		<section style="background: var(--light);">
-			<div class="container">
-				<h2 class="section-title">Learning Paths</h2>
-				<div class="grid-2" style="gap: 2rem; margin-top: 2rem;" data-aos="fade-up">
-					<div class="card">
-						<h3 class="card-title">Beginner</h3>
-						<p class="card-text">Python basics, statistics, and visualization fundamentals.</p>
-					</div>
-					<div class="card">
-						<h3 class="card-title">Intermediate</h3>
-						<p class="card-text">ML workflows, feature engineering, and model evaluation.</p>
-					</div>
-				</div>
-			</div>
-		</section>
+            <button class="btn btn-primary search-btn">Search</button>
+          </div>
 
-		    <footer>
+          <div class="quick-tags" data-aos="fade-up" data-aos-delay="200">
+            <span style="font-size: 0.9rem; color: var(--gray); font-weight: 600;">Popular:</span>
+            <span class="modern-tag">Pandas</span>
+            <span class="modern-tag">Streamlit</span>
+            <span class="modern-tag">Beginner Friendly</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section style="background-color: var(--light); padding-top: 5rem; padding-bottom: 6rem;">
+      <div class="container">
+        
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+          <h2 class="section-title" style="margin: 0; text-align: center;">Latest Uploads</h2>
+          
+          <div style="display: flex; gap: 0.5rem; display: none; /* remove display none to use filters later */">
+            <span class="badge badge-primary" style="cursor: pointer;">All</span>
+            <span class="badge" style="background: var(--white); border: 1px solid var(--lighter); color: var(--gray); cursor: pointer;">Python</span>
+            <span class="badge" style="background: var(--white); border: 1px solid var(--lighter); color: var(--gray); cursor: pointer;">Machine Learning</span>
+          </div>
+        </div>
+        
+        <div class="grid-3">
+          
+          <a href="#" style="text-decoration: none; color: inherit;" class="project-card vid-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="project-image" style="background-image: url('../assets/images/tut-pandas.jpg'); position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(12, 35, 117, 0.4); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <div class="play-btn" style="width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                      <svg width="24" height="24" fill="var(--primary-dark)" viewBox="0 0 24 24" style="margin-left: 4px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(77, 165, 176, 0.15); color: var(--primary);">Beginner</span>
+                <span class="project-tag" style="background: rgba(35, 77, 159, 0.1); color: var(--primary-dark);">Python</span>
+              </div>
+              <h3 class="project-title">Intro to Pandas & DataFrames</h3>
+              <p class="project-description">Learn how to load, clean, and manipulate CSV datasets using the industry-standard Pandas library.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--lighter);">
+                <span style="font-size: 0.85rem; color: var(--gray); font-weight: 600;">⏱ 45 Mins</span>
+                <span style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Watch Now →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration: none; color: inherit;" class="project-card vid-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image" style="background-image: url('../assets/images/tut-streamlit.jpg'); position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(12, 35, 117, 0.4); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <div class="play-btn" style="width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                      <svg width="24" height="24" fill="var(--primary-dark)" viewBox="0 0 24 24" style="margin-left: 4px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(234, 179, 8, 0.15); color: #ca8a04;">Intermediate</span>
+                <span class="project-tag" style="background: rgba(35, 77, 159, 0.1); color: var(--primary-dark);">Web Dev</span>
+              </div>
+              <h3 class="project-title">Building Web Apps with Streamlit</h3>
+              <p class="project-description">Turn your Python data scripts into shareable web applications in minutes. No HTML/CSS required.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--lighter);">
+                <span style="font-size: 0.85rem; color: var(--gray); font-weight: 600;">⏱ 1 Hr 15 Mins</span>
+                <span style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Watch Now →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration: none; color: inherit;" class="project-card vid-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image" style="background-image: url('../assets/images/tut-sql.jpg'); position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(12, 35, 117, 0.4); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <div class="play-btn" style="width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                      <svg width="24" height="24" fill="var(--primary-dark)" viewBox="0 0 24 24" style="margin-left: 4px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(220, 38, 38, 0.1); color: #dc2626;">Advanced</span>
+                <span class="project-tag" style="background: rgba(35, 77, 159, 0.1); color: var(--primary-dark);">Database</span>
+              </div>
+              <h3 class="project-title">SQL Window Functions Explained</h3>
+              <p class="project-description">Master advanced data aggregation techniques like ROW_NUMBER, RANK, and running totals.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--lighter);">
+                <span style="font-size: 0.85rem; color: var(--gray); font-weight: 600;">⏱ 35 Mins</span>
+                <span style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Watch Now →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration: none; color: inherit;" class="project-card vid-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="project-image" style="background-image: url('../assets/images/tut-git.jpg'); position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(12, 35, 117, 0.4); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <div class="play-btn" style="width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                      <svg width="24" height="24" fill="var(--primary-dark)" viewBox="0 0 24 24" style="margin-left: 4px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(77, 165, 176, 0.15); color: var(--primary);">Beginner</span>
+                <span class="project-tag" style="background: rgba(35, 77, 159, 0.1); color: var(--primary-dark);">Tools</span>
+              </div>
+              <h3 class="project-title">Git & GitHub for Data Scientists</h3>
+              <p class="project-description">A complete guide to version control. Learn to commit, push, branch, and collaborate on code safely.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--lighter);">
+                <span style="font-size: 0.85rem; color: var(--gray); font-weight: 600;">⏱ 50 Mins</span>
+                <span style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Watch Now →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration: none; color: inherit;" class="project-card vid-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image" style="background-image: url('../assets/images/tut-ml.jpg'); position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(12, 35, 117, 0.4); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <div class="play-btn" style="width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                      <svg width="24" height="24" fill="var(--primary-dark)" viewBox="0 0 24 24" style="margin-left: 4px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(234, 179, 8, 0.15); color: #ca8a04;">Intermediate</span>
+                <span class="project-tag" style="background: rgba(35, 77, 159, 0.1); color: var(--primary-dark);">AI / ML</span>
+              </div>
+              <h3 class="project-title">Your First Predictive Model</h3>
+              <p class="project-description">Code-along session building a linear regression model using Scikit-Learn to predict housing prices.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--lighter);">
+                <span style="font-size: 0.85rem; color: var(--gray); font-weight: 600;">⏱ 1 Hr 30 Mins</span>
+                <span style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Watch Now →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration: none; color: inherit;" class="project-card vid-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image" style="background-image: url('../assets/images/tut-viz.jpg'); position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(12, 35, 117, 0.4); display: flex; align-items: center; justify-content: center; z-index: 0;">
+                  <div class="play-btn" style="width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                      <svg width="24" height="24" fill="var(--primary-dark)" viewBox="0 0 24 24" style="margin-left: 4px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag" style="background: rgba(77, 165, 176, 0.15); color: var(--primary);">Beginner</span>
+                <span class="project-tag" style="background: rgba(35, 77, 159, 0.1); color: var(--primary-dark);">Python</span>
+              </div>
+              <h3 class="project-title">Stunning Plots with Seaborn</h3>
+              <p class="project-description">Move beyond basic Matplotlib charts and learn how to create publication-ready visualizations.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--lighter);">
+                <span style="font-size: 0.85rem; color: var(--gray); font-weight: 600;">⏱ 40 Mins</span>
+                <span style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Watch Now →</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem;" data-aos="fade-up">
+            <a href="#" class="btn btn-outline" style="border: 2px solid var(--lighter); color: var(--gray); font-weight: 600;">Load More Tutorials</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card" data-aos="fade-up">
+          <h2>Request a Tutorial</h2>
+          <p>Is there a specific tool, language, or concept you want to learn? Let us know, and our tech team will create a custom tutorial video just for the club.</p>
+          <a href="../contact.html" class="btn btn-accent btn-large">Submit a Request</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
       <div class="footer-content container">
         
         <div class="footer-brand">
@@ -101,7 +278,7 @@
           <h3>Quick Links</h3>
           <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="index.html">About Us</a></li>
+            <li><a href="../about/index.html">About Us</a></li>
             <li><a href="../events/index.html">Events</a></li>
             <li><a href="../projects/index.html">Projects</a></li>
             <li><a href="../resources/index.html">Resources</a></li>
@@ -138,7 +315,7 @@
       </div>
     </footer>
 
-		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-		<script src="../js/main.js?v=14" defer></script>
-	</body>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js?v=23" defer></script>
+  </body>
 </html>

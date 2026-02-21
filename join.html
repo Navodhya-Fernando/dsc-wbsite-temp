@@ -3,17 +3,621 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Join Us - Data Science Club</title>
-    <link rel="stylesheet" href="css/components.css?v=14" />
-    <link rel="stylesheet" href="css/styles.css?v=14" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-    />
+    <title>Join the Club | Data Science Club - NIBM</title>
+    <link rel="stylesheet" href="css/components.css?v=28" />
+    <link rel="stylesheet" href="css/styles.css?v=28" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <style>
+      /* Page-Specific UI Elements */
+      
+      /* Main Two-Column Layout Container */
+      .join-container {
+        max-width: 1400px;
+        margin: 60px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+        position: relative;
+        z-index: 10;
+      }
+
+      /* --- Left Column: Info & Benefits --- */
+      .join-info {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .header-block h1 {
+        font-size: 2.8rem;
+        color: var(--dark);
+        margin-bottom: 12px;
+        line-height: 1.2;
+        margin-top: 0;
+      }
+
+      .header-block p {
+        font-size: 1.1rem;
+        color: var(--gray);
+        margin: 0;
+      }
+
+      .pricing-block {
+        background: var(--white);
+        border: 1px solid var(--lighter);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 10px 25px rgba(12, 35, 117, 0.05);
+      }
+
+      .pricing-block h3 {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--gray);
+        margin-bottom: 8px;
+        margin-top: 0;
+      }
+
+      .price-tag {
+        display: flex;
+        align-items: baseline;
+        color: var(--dark);
+        gap: 4px;
+      }
+
+      .price-tag .currency {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .price-tag .amount {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .price-tag .term {
+        font-size: 1rem;
+        color: var(--gray);
+        margin-left: 8px;
+      }
+
+      .benefits-block h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        margin-top: 0;
+        color: var(--dark);
+      }
+
+      .benefits-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .benefits-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .icon-wrapper {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .icon-wrapper svg {
+        width: 28px;
+        height: 28px;
+        color: var(--primary);
+        stroke: currentColor;
+      }
+
+      .benefit-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .benefit-text strong {
+        color: var(--dark);
+        font-size: 1.15rem;
+      }
+
+      .benefit-text span {
+        color: var(--gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* --- Right Column: Registration Form --- */
+      .join-form-wrapper {
+        background: var(--darker);
+        border-radius: 24px;
+        padding: 3rem;
+        box-shadow: 0 20px 40px rgba(12, 35, 117, 0.15);
+        border: 1px solid rgba(142, 214, 221, 0.2);
+        position: sticky;
+        top: 40px;
+        overflow: hidden;
+      }
+
+      /* Tech Background Grid */
+      .join-form-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background-image: radial-gradient(rgba(142, 214, 221, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .form-container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .form-container h2 {
+        font-size: 1.8rem;
+        color: var(--white);
+        margin-bottom: 8px;
+        margin-top: 0;
+      }
+
+      .form-subtext {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 30px;
+        font-size: 0.95rem;
+      }
+
+      .status-header {
+        background: rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        font-family: 'Share Tech Mono', monospace;
+      }
+
+      .status-pulse {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #86efac;
+      }
+
+      .pulse-dot {
+        width: 8px; height: 8px;
+        background: #86efac;
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(134, 239, 172, 0.7); }
+        70% { box-shadow: 0 0 0 6px rgba(134, 239, 172, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(134, 239, 172, 0); }
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .full-width {
+        grid-column: span 2;
+      }
+
+      /* Dark Mode Form Inputs */
+      .dark-input {
+        width: 100%;
+        padding: 1rem 1.2rem;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.2);
+        font-family: inherit;
+        font-size: 0.95rem;
+        color: var(--white);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+      }
+
+      .dark-input::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .dark-input:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 15px rgba(142, 214, 221, 0.2);
+      }
+
+      .dark-label {
+        display: block;
+        font-weight: 600;
+        color: var(--lighter);
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .dark-label span {
+        color: var(--accent);
+        font-family: 'Share Tech Mono', monospace;
+        font-weight: normal;
+        margin-left: 5px;
+        opacity: 0.8;
+      }
+
+      /* Terminal Status Header */
+      .status-header {
+        background: rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        font-family: 'Share Tech Mono', monospace;
+        position: relative;
+        z-index: 1;
+      }
+
+      .status-pulse {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #86efac; /* Tech Green */
+      }
+
+      .pulse-dot {
+        width: 8px; height: 8px;
+        background: #86efac;
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(134, 239, 172, 0.7); }
+        70% { box-shadow: 0 0 0 6px rgba(134, 239, 172, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(134, 239, 172, 0); }
+      }
+
+      /* Mobile Optimization - Touch-Friendly Improvements */
+      
+      /* Larger touch targets for mobile */
+      @media screen and (max-width: 900px) {
+        .join-container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          margin: 40px auto;
+          padding: 0 16px;
+        }
+        
+        .form-grid { 
+          grid-template-columns: 1fr; 
+        }
+        
+        .full-width { 
+          grid-column: span 1; 
+        }
+        
+        .join-form-wrapper {
+          position: relative;
+          top: 0;
+          padding: 1.5rem;
+        }
+        
+        /* Optimize form inputs for mobile - larger padding for touch */
+        .dark-input {
+          padding: 1rem 1rem;
+          font-size: 16px; /* Prevents zoom on iOS */
+          min-height: 44px; /* Apple's recommended touch target */
+          border-radius: 12px;
+        }
+        
+        /* Select dropdown mobile optimization */
+        .dark-input[type="select"],
+        select.dark-input {
+          padding: 12px 40px 12px 12px;
+          background-size: 20px 20px;
+          background-position: right 10px center;
+          appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238ed6dd' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          cursor: pointer;
+        }
+        
+        /* Button sizing for mobile */
+        .btn-large {
+          padding: 1.2rem 1.5rem;
+          font-size: 1rem;
+          min-height: 44px;
+          width: 100%;
+          border-radius: 12px;
+        }
+        
+        /* Status header - reduce padding on small screens */
+        .status-header {
+          padding: 0.6rem 1rem;
+          font-size: 0.75rem;
+          flex-direction: column;
+          gap: 0.5rem;
+          text-align: center;
+          margin-bottom: 1.5rem;
+        }
+        
+        .status-pulse {
+          font-size: 0.75rem;
+        }
+        
+        /* Form container text sizing */
+        .form-container h2 {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+        
+        .form-subtext {
+          font-size: 0.9rem;
+          margin-bottom: 1.5rem;
+        }
+        
+        /* Pricing block - reduce padding */
+        .pricing-block {
+          padding: 20px;
+        }
+        
+        .benefits-block h3 {
+          font-size: 1.3rem;
+        }
+        
+        /* Benefits list - better spacing on mobile */
+        .benefits-list {
+          gap: 16px;
+        }
+        
+        .benefits-list li {
+          gap: 12px;
+        }
+        
+        .icon-wrapper svg {
+          width: 24px;
+          height: 24px;
+        }
+        
+        .benefit-text strong {
+          font-size: 1.05rem;
+        }
+        
+        .benefit-text span {
+          font-size: 0.9rem;
+        }
+        
+        /* Checkbox - better touch target */
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+          min-width: 20px;
+          cursor: pointer;
+        }
+        
+        /* Fee acknowledgment box - optimize spacing */
+        div[style*="display: flex"] {
+          padding: 1rem !important;
+          gap: 0.8rem !important;
+        }
+        
+        .dark-label {
+          font-size: 0.85rem;
+        }
+        
+        .dark-label span {
+          font-size: 0.75rem;
+        }
+      }
+      
+      @media screen and (max-width: 640px) {
+        .join-container {
+          margin: 30px auto;
+          gap: 30px;
+          padding: 0 12px;
+        }
+        
+        .page-hero {
+          padding: 5rem 1rem 4rem !important;
+        }
+        
+        .page-hero h1 {
+          font-size: 2.2rem !important;
+        }
+        
+        .page-hero p {
+          font-size: 1rem !important;
+        }
+        
+        /* Even larger touch targets on very small screens */
+        .dark-input {
+          padding: 12px 12px;
+          min-height: 48px;
+          font-size: 16px;
+        }
+        
+        select.dark-input {
+          padding: 12px 36px 12px 12px;
+        }
+        
+        .btn-large {
+          padding: 1rem 1.2rem;
+          min-height: 48px;
+          font-size: 0.95rem;
+        }
+        
+        .join-form-wrapper {
+          padding: 1.2rem;
+        }
+        
+        .form-container h2 {
+          font-size: 1.3rem;
+        }
+        
+        /* Hide pulse animation on mobile to save resources */
+        .pulse-dot {
+          display: none;
+        }
+        
+        .status-header {
+          padding: 0.5rem 0.8rem;
+          gap: 0.3rem;
+        }
+        
+        .benefits-list {
+          gap: 12px;
+        }
+        
+        .benefits-list li {
+          gap: 10px;
+        }
+        
+        .icon-wrapper svg {
+          width: 22px;
+          height: 22px;
+          margin-top: 1px;
+        }
+        
+        .benefit-text strong {
+          font-size: 1rem;
+        }
+        
+        .benefit-text span {
+          font-size: 0.85rem;
+          line-height: 1.4;
+        }
+        
+        .price-tag .amount {
+          font-size: 2.5rem;
+        }
+        
+        .price-tag .currency {
+          font-size: 1.2rem;
+        }
+        
+        /* Stack form fields better */
+        .form-grid {
+          gap: 1rem;
+        }
+        
+        label.dark-label {
+          font-size: 0.8rem;
+        }
+      }
+      
+      @media screen and (max-width: 480px) {
+        .join-container {
+          margin: 20px auto;
+          gap: 20px;
+          padding: 0 8px;
+        }
+        
+        .page-hero {
+          padding: 4rem 1rem 3rem !important;
+        }
+        
+        .page-hero h1 {
+          font-size: 1.8rem !important;
+        }
+        
+        .dark-input {
+          padding: 12px 12px;
+          min-height: 48px;
+          font-size: 16px; /* Critical for iOS keyboard */
+          border-radius: 8px;
+        }
+        
+        /* Select on very small screens */
+        select.dark-input {
+          padding: 10px 32px 10px 10px;
+          font-size: 16px;
+          background-size: 16px 16px;
+          background-position: right 8px center;
+        }
+        
+        .btn-large {
+          min-height: 48px;
+          font-size: 0.95rem;
+          padding: 12px 1rem;
+          width: 100%;
+        }
+        
+        .header-block h1 {
+          font-size: 1.8rem;
+        }
+        
+        .pricing-block {
+          padding: 16px;
+          border-radius: 12px;
+        }
+        
+        .form-container h2 {
+          font-size: 1.2rem;
+          margin-bottom: 0.3rem;
+        }
+        
+        .form-subtext {
+          font-size: 0.85rem;
+        }
+        
+        /* Footer on ultra-small screens */
+        footer {
+          padding: 60px 1rem 1rem !important;
+        }
+        
+        .footer-content {
+          gap: 1.5rem !important;
+        }
+        
+        .footer-brand p {
+          font-size: 0.8rem;
+          line-height: 1.5;
+        }
+        
+        .footer-contact h3,
+        .footer-links h3,
+        .footer-social h3 {
+          font-size: 0.8rem;
+          margin-bottom: 0.8rem;
+        }
+        
+        .contact-list li {
+          gap: 0.6rem;
+        }
+        
+        .social-icons a {
+          width: 36px;
+          height: 36px;
+        }
+        
+        .social-icons svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- Header & Navigation -->
-        <header>
+    
+    <header>
       <nav class="container">
         <a href="index.html" class="logo">
           <img src="assets/images/DSC Logo.png" alt="DSC Logo" style="height: 80px; width: auto" />
@@ -25,224 +629,185 @@
           <li><a href="projects/index.html">Projects</a></li>
           <li><a href="resources/index.html">Resources</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="join.html" class="btn btn-primary btn-small nav-cta">Join Us</a></li>
+          <li><a href="join.html" class="btn btn-primary btn-small nav-cta active">Join Us</a></li>
         </ul>
         <button class="mobile-menu-btn">☰</button>
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Join Data Science Club</h1>
-        <p>Become part of a thriving community of data science enthusiasts</p>
-      </div>
-    </section>
-
-    <!-- Membership Plan -->
-    <section class="container">
-      <h2 class="section-title">Annual Membership Fee</h2>
-      <div style="max-width: 520px; margin: 2rem auto;" data-aos="fade-up">
-        <div class="card" style="border-top: 4px solid var(--primary);">
-          <h3 style="color: var(--dark); margin-bottom: 0.5rem;">Annual Member</h3>
-          <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 1rem 0;">
-            LKR 500<span style="font-size: 0.8rem; color: var(--secondary);">/year</span>
-          </p>
-          <ul style="list-style: none; margin: 1.5rem 0;">
-            <li style="margin-bottom: 0.75rem;">✓ Event attendance</li>
-            <li style="margin-bottom: 0.75rem;">✓ Resource library access</li>
-            <li style="margin-bottom: 0.75rem;">✓ Community support</li>
-            <li style="margin-bottom: 0.75rem;">✓ Member certificate</li>
-            <li style="margin-bottom: 0.75rem;">✓ Club updates and newsletters</li>
-          </ul>
-          <button onclick="registerMembership('annual')" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
-            Register Now
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Membership Benefits -->
-    <section style="background: #f8fafc;">
-      <div class="container">
-        <h2 class="section-title">What You Get</h2>
-        <div class="benefits-grid" data-aos="fade-up">
-          <div class="benefit-item">Access to exclusive workshops and seminars</div>
-          <div class="benefit-item">Comprehensive learning resource library</div>
-          <div class="benefit-item">Professional networking opportunities</div>
-          <div class="benefit-item">Collaboration on innovative projects</div>
-          <div class="benefit-item">Mentorship from industry professionals</div>
-          <div class="benefit-item">Career guidance and job referrals</div>
-          <div class="benefit-item">Certificate of membership and achievements</div>
-          <div class="benefit-item">Discounted event registration fees</div>
-          <div class="benefit-item">Active community support and mentoring</div>
-          <div class="benefit-item">Monthly newsletters with latest updates</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Registration Form -->
-    <section class="container">
-      <h2 class="section-title">Register Now</h2>
-      <div style="max-width: 600px; margin: 0 auto;" data-aos="fade-up">
-        <form id="registration-form" onsubmit="handleRegistration(event)">
-          <div class="form-group">
-            <label for="full_name">Full Name *</label>
-            <input
-              type="text"
-              id="full_name"
-              name="full_name"
-              required
-              placeholder="Enter your full name"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="your.email@nibm.lk"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              required
-              placeholder="Enter 10-digit mobile number"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="student_id">Student ID *</label>
-            <input
-              type="text"
-              id="student_id"
-              name="student_id"
-              required
-              placeholder="e.g., BIT-2023-001"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="program">Program/Department *</label>
-            <select id="program" name="program" required>
-              <option value="">Select your program</option>
-              <option value="BIT">Bachelor of IT</option>
-              <option value="BIS">Bachelor of Information Systems</option>
-              <option value="MCSIT">MSc IT</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="membership_type">Membership Type *</label>
-            <select id="membership_type" name="membership_type" required>
-              <option value="annual">Annual Membership (LKR 500)</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="interests">Areas of Interest</label>
-            <textarea
-              id="interests"
-              name="interests"
-              placeholder="Tell us about your interests in data science..."
-            ></textarea>
-          </div>
-
-          <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
-            <input
-              type="checkbox"
-              id="terms"
-              name="terms"
-              required
-            />
-            <label for="terms" style="margin: 0;">
-              I agree to the <a href="#" style="color: #3b82f6;">terms and conditions</a> *
-            </label>
-          </div>
-
-          <div class="alert alert-info" style="margin-bottom: 1.5rem;">
-            💳 Secure payment will be processed through certified payment gateway. No financial data is stored on our servers.
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-large" style="width: 100%; font-size: 1.1rem;">
-            Proceed to Payment
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section style="background: #f8fafc;">
-      <div class="container">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <div class="grid-2" style="gap: 2rem;">
-          <div>
-            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">📅 When is membership valid?</h4>
-            <p style="color: #64748b;">
-              Membership is valid for one academic semester. You can renew at the end of each
-              semester to continue receiving benefits.
-            </p>
-          </div>
-          <div>
-            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">💰 Can I change my membership type?</h4>
-            <p style="color: #64748b;">
-              Yes, you can upgrade or downgrade your membership. Contact us for adjustment details.
-            </p>
-          </div>
-          <div>
-            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">🔒 Is my payment secure?</h4>
-            <p style="color: #64748b;">
-              Absolutely! We use certified payment gateways with HTTPS encryption. Your financial
-              data is never stored on our servers.
-            </p>
-          </div>
-          <div>
-            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">📧 How will I receive my membership confirmation?</h4>
-            <p style="color: #64748b;">
-              You'll receive a confirmation email immediately after successful payment with your
-              membership details.
-            </p>
-          </div>
-          <div>
-            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">🎓 Are there scholarships available?</h4>
-            <p style="color: #64748b;">
-              Yes, limited scholarships are available for outstanding students. Contact us to apply.
-            </p>
-          </div>
-          <div>
-            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">❌ Can I get a refund?</h4>
-            <p style="color: #64748b;">
-              Refunds are available within 7 days of payment if requested. Please contact our finance team.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call-to-Action -->
-    <section style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #fff; text-align: center;">
-      <div class="container">
-        <h2 style="color: #fff; margin-bottom: 1rem;">Ready to Start Your Journey?</h2>
-        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem;">
-          Join 500+ data science enthusiasts today
+    <section class="page-hero" style="text-align: center; padding: 7rem 2rem 6rem;">
+      <div class="container" style="position: relative; z-index: 1;" data-aos="zoom-in" data-aos-duration="800">
+        <span class="badge badge-accent mb-4" style="font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;">[ SYS.ADMIN // ONBOARDING ]</span>
+        <h1 class="page-title" style="font-size: 4rem; margin-bottom: 1.5rem;">Initialize <span class="text-gradient">Node.</span></h1>
+        <p class="page-subtitle" style="margin: 0 auto; max-width: 650px; font-size: 1.15rem; line-height: 1.7;">
+          Register to become an active member of the NIBM Data Scientists' Club. Gain access to exclusive datasets, premium workshops, and open-source repositories.
         </p>
-        <a href="#registration-form" class="btn btn-primary btn-large" style="background: #fff; color: #3b82f6; font-weight: 700;">
-          Complete Registration
-        </a>
       </div>
     </section>
 
-    <!-- Footer -->
-        <footer>
+    <section class="join-container">
+      
+      <section class="join-info">
+        
+        <div class="header-block">
+          <h1>Join the Data Scientists' Club</h1>
+          <p>Unlock exclusive resources, networking opportunities, and priority access to events and competitions.</p>
+        </div>
+
+        <div class="pricing-block">
+          <h3>Membership Pricing</h3>
+          <div class="price-tag">
+            <span class="currency">Rs.</span>
+            <span class="amount">500</span>
+            <span class="term">/ year</span>
+          </div>
+        </div>
+
+        <div class="benefits-block">
+          <h3>What you unlock</h3>
+          <ul class="benefits-list">
+            
+            <li>
+              <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+                </svg>
+              </div>
+              <div class="benefit-text">
+                <strong>Exclusive Workshops</strong>
+                <span>Hands-on sessions covering Python data analysis, NoSQL databases like MongoDB, and interactive app building with Streamlit.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                </svg>
+              </div>
+              <div class="benefit-text">
+                <strong>Community Support</strong>
+                <span>Collaborate with fellow data science students, get help debugging code, and build your professional network.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+                </svg>
+              </div>
+              <div class="benefit-text">
+                <strong>Resource Library</strong>
+                <span>Gain access to curated datasets, Power BI dashboards, and templates for your next analytics project.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                </svg>
+              </div>
+              <div class="benefit-text">
+                <strong>Hackathons & Events</strong>
+                <span>Team up for events like Hacktoberfest, open-source jams, and exclusive club competitions.</span>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="join-form-wrapper">
+        
+        <div class="status-header">
+          <span style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">ENV: PRODUCTION</span>
+          <div class="status-pulse">
+            <div class="pulse-dot"></div>
+            <span style="font-size: 0.85rem;">AWAITING_PAYLOAD</span>
+          </div>
+        </div>
+
+        <div class="form-container">
+          <h2>Initialize Node</h2>
+          <p class="form-subtext">Provide your internal variables to be registered in the central database.</p>
+          
+          <form>
+            <div class="form-grid">
+              
+              <div>
+                <label class="dark-label">First Name <span>{string}</span></label>
+                <input type="text" class="dark-input" placeholder="e.g. Ada" required>
+              </div>
+
+              <div>
+                <label class="dark-label">Last Name <span>{string}</span></label>
+                <input type="text" class="dark-input" placeholder="e.g. Lovelace" required>
+              </div>
+
+              <div class="full-width">
+                <label class="dark-label">NIBM Student ID <span>{varchar}</span></label>
+                <input type="text" class="dark-input" placeholder="e.g. CODSE/XX/X/XXXX" required>
+              </div>
+
+              <div class="full-width">
+                <label class="dark-label">Primary Email <span>{email}</span></label>
+                <input type="email" class="dark-input" placeholder="student@nibm.lk" required>
+              </div>
+
+              <div>
+                <label class="dark-label">Current Level <span>{enum}</span></label>
+                <select class="dark-input" required>
+                  <option value="" disabled selected>Select Level...</option>
+                  <option value="cert">Certificate</option>
+                  <option value="dip">Diploma</option>
+                  <option value="hnd">Higher National Diploma (HND)</option>
+                  <option value="degree">BSc Degree</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="dark-label">Primary Track <span>{enum}</span></label>
+                <select class="dark-input" required>
+                  <option value="" disabled selected>Select Specialization...</option>
+                  <option value="ml">Machine Learning & AI</option>
+                  <option value="data-eng">Data Engineering</option>
+                  <option value="analytics">Business Analytics</option>
+                  <option value="software">Software / Web Dev</option>
+                </select>
+              </div>
+
+              <div class="full-width">
+                <label class="dark-label">GitHub Username <span>{optional}</span></label>
+                <input type="text" class="dark-input" placeholder="github.com/yourusername">
+              </div>
+
+              <div class="full-width" style="margin-top: 1.5rem;">
+                
+                <div style="display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 1.5rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 8px; border-left: 3px solid var(--accent);">
+                  <input type="checkbox" id="fee-agree" required style="margin-top: 4px; accent-color: var(--accent); cursor: pointer;">
+                  <label for="fee-agree" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; cursor: pointer; line-height: 1.5;">
+                    I acknowledge that active membership requires a <strong>500 LKR annual fee</strong>. Instructions for payment routing will be sent upon successful form compilation.
+                  </label>
+                </div>
+
+                <button type="submit" class="btn btn-accent btn-large" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.8rem; font-weight: 700; letter-spacing: 0.5px;">
+                  Compile & Register
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </section>
+
+    </section>
+
+    <footer>
       <div class="footer-content container">
         
         <div class="footer-brand">
@@ -310,50 +875,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="js/main.js?v=14" defer></script>
-    <script src="js/payment-redirect.js"></script>
-    <script>
-      function registerMembership(type) {
-        document.getElementById("membership_type").value = "annual";
-        document.getElementById("registration-form").scrollIntoView({ behavior: "smooth" });
-      }
-
-      function handleRegistration(event) {
-        event.preventDefault();
-        
-        // Validate form
-        const form = document.getElementById("registration-form");
-        if (!DCSFunctions.validateForm(form)) {
-          DCSFunctions.showNotification("Please fill all required fields correctly", "error");
-          return;
-        }
-
-        // Prepare data for payment
-        const formData = new FormData(form);
-        const membershipPrices = {
-          annual: 500
-        };
-
-        const membershipType = formData.get("membership_type") || "annual";
-        const amount = membershipPrices[membershipType] || 500;
-
-        const paymentData = {
-          fullName: formData.get("full_name"),
-          email: formData.get("email"),
-          phone: formData.get("phone"),
-          studentId: formData.get("student_id"),
-          program: formData.get("program"),
-          membershipType: membershipType,
-          amount: amount,
-          type: "membership"
-        };
-
-        // Store in session
-        sessionStorage.setItem("paymentData", JSON.stringify(paymentData));
-        
-        // Redirect to payment
-        DCSFunctions.redirectToPaymentGateway(paymentData);
-      }
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
