@@ -133,12 +133,53 @@ nav {
   }
 
   .nav-links {
-    gap: 1rem;
-    display: none; /* Hide on mobile, show with JS */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 1rem;
+    gap: 1.5rem;
+    z-index: 999;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links.nav-active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
   }
 
   .nav-links a:not(.btn) {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .nav-links a:not(.btn)::after {
+    display: none;
+  }
+
+  .nav-links a:not(.btn):hover {
+    color: var(--accent);
+  }
+
+  .nav-links .nav-cta {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 0.5rem;
   }
 
   .mobile-menu-btn {
@@ -155,6 +196,16 @@ nav {
 
   .logo img {
     height: 45px;
+  }
+
+  .nav-links {
+    top: 50px;
+    padding: 0.8rem;
+    gap: 1rem;
+  }
+
+  .nav-links a:not(.btn) {
+    font-size: 0.85rem;
   }
 
   .mobile-menu-btn {
@@ -382,7 +433,16 @@ nav {
 @media (max-width: 768px) {
   .cta-card {
     padding: 2.5rem 2rem;
-    transform: translateY(60px);
+    transform: translateY(0);
+    margin-bottom: -2rem;
+  }
+
+  .cta-section {
+    padding-bottom: 2rem;
+  }
+
+  footer {
+    padding-top: 60px;
   }
 
   .cta-card h2 {
@@ -404,8 +464,17 @@ nav {
 @media (max-width: 640px) {
   .cta-card {
     padding: 2rem 1.5rem;
-    transform: translateY(50px);
+    transform: translateY(0);
+    margin-bottom: -1.5rem;
     border-radius: 16px;
+  }
+
+  .cta-section {
+    padding-bottom: 1.5rem;
+  }
+
+  footer {
+    padding-top: 50px;
   }
 
   .cta-card h2 {
@@ -431,7 +500,16 @@ nav {
 @media (max-width: 480px) {
   .cta-card {
     padding: 1.5rem 1.2rem;
-    transform: translateY(40px);
+    transform: translateY(0);
+    margin-bottom: -1rem;
+  }
+
+  .cta-section {
+    padding-bottom: 1rem;
+  }
+
+  footer {
+    padding-top: 40px;
   }
 
   .cta-card h2 {

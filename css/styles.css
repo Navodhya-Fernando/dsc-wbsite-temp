@@ -60,6 +60,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
 body {
@@ -69,6 +72,8 @@ body {
   background-color: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
 h1,
@@ -347,9 +352,12 @@ h6 {
     }
 
     .terminal-body {
-      font-size: 0.9rem;
-      padding: 16px;
-      min-height: 180px;
+      font-size: 0.8rem;
+      padding: 12px;
+      min-height: 160px;
+      word-break: break-word;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
     }
 
     .terminal-header {

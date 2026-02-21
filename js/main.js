@@ -32,24 +32,13 @@ function setupMobileMenu() {
   if (!mobileMenuBtn) return;
 
   mobileMenuBtn.addEventListener("click", function () {
-    navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
-    navLinks.style.position = "absolute";
-    navLinks.style.top = "60px";
-    navLinks.style.left = "0";
-    navLinks.style.right = "0";
-    navLinks.style.flexDirection = "column";
-    navLinks.style.gap = "0";
-    navLinks.style.background = "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)";
-    navLinks.style.padding = "1rem";
-    navLinks.style.zIndex = "999";
+    navLinks.classList.toggle("nav-active");
   });
 
   // Close menu when a link is clicked
   document.querySelectorAll(".nav-links a").forEach((link) => {
     link.addEventListener("click", function () {
-      if (navLinks.style.display === "flex") {
-        navLinks.style.display = "none";
-      }
+      navLinks.classList.remove("nav-active");
     });
   });
 }
@@ -401,6 +390,24 @@ function setupNetworkCanvas() {
   });
 
   canvas.addEventListener("mouseout", () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  // Add touch support for mobile devices
+  canvas.addEventListener("touchstart", (event) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = event.touches[0].clientX - rect.left;
+    mouse.y = event.touches[0].clientY - rect.top;
+  });
+
+  canvas.addEventListener("touchmove", (event) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = event.touches[0].clientX - rect.left;
+    mouse.y = event.touches[0].clientY - rect.top;
+  });
+
+  canvas.addEventListener("touchend", () => {
     mouse.x = null;
     mouse.y = null;
   });
